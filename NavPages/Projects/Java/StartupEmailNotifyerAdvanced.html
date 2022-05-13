@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="/../../style.css" rel="stylesheet" type="text/css"/>
+    <title>Startup Email Advanced Guide</title>
+    <link rel="../../../../Images/favicons/apple-touch-icon" sizes="180x180" href="../Images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../Images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../Images/favicons/favicon-16x16.png">
+    <!-- <div id="head-placeholder"></div><script>$(function(){$("#head-placeholder").load("/../../PageFragments/head.html");});</script> -->
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!--Navigation bar-->
+<div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
+
+<!-- <div class="disclaimer">Please note, Replit limits the emmbead box. Try "open in replit" or zooming out to view it in it's entirety</div> -->
+<br>
+    <div id="primary_light"><p id="centerH" style="border: 8px solid #003a8b;width: 30vw; background-color:#265197; font-size:5vh; margin:auto;">Advanced Guide</p></div></div>
+<!-- bfebec -->
+    <center><p id="indent" style="border-radius: 25px;  border: 6px solid #003a8b;with:100%;">This is a more advanced guide for my "Startup Email Notificaton Program". For those who want to add their own commands, this is the guide explaining the code.</p></center>
+
+
+<div class="version">
+    <h2 id="headerText" style="text-align:center;">Latest Release:<br> <u id="contentText">You can find and download the latest post of this pogram <a href="/../../NavPages/Downloads.html" target="_blank">here</a> at my downlaods page.</u></h2>
+</div>
+
+
+<center><div class="videoCenterBox" id="clippedCorners" style="width:75vw;">
+    <br>
+    <h1 id="headerText" style="text-align:center;color:var(--primary_light);background-color:#3681a7;">Watch this video to see how to open this program in IntelliJ</h1>
+        <video id="videoCenterBox" style="border-radius:2vh;" width="60%" height="auto" controls>
+            <source src="/../../Videos/OpeningInIntillij.webm" type="video/webm">
+        </video>
+        <div style="color: var(--primary_dark_dark);">
+        <h2 id="contentText2" style="padding-left:2vw;padding-right:2vw;">
+            </h2></div></center>
+</div></div></center>
+
+
+
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #1</u>] Package & imports</h1>
+    <p>This is the imports section, this can mostly be ignored if you have worked with java but for those with less experance you can see the package hierarchy. All of your imports go here and you can see what methods from the package is used.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/1_classTop.png" alt="Imports" width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #2</u>] Global-<i>ish</i> Variables</h1>
+    <p>This section is dedicated to easy setting changing and where most of the class variables are stored, they are setup to use standard convention of all caps with underscores for spaces to denote that they are static variables. If you want to turn off a setting (they all have long names to make them self-explanatory), you can just switch them from <u>true</u> to <u>false</u> or vice versa. Strings can just be modified as normal. ErrorReport is the only default non-static class variable and is used for saving error logs.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/2_classVariables.png" alt="Static Class Variables" width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #3</u>] Attempt to get host address.</h1>
+    <i>This code is here for debugging purposes as part of a development build and will not be present in future versions.</i>
+    <p>One of the first things that this program tries to do is obtain your host address, in this case this code will always print this out as there is no settings check with it which will be changed in a later version. This will look at all of your interfaces so it may provide unnessery information. To hard code this to avoid lookinf in the first place, switch the true's to false.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/3_startOfMain.png" alt="Start Of Main Method" width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #4</u>] </h1>
+    <p>The code here is dense but it is broken into two parts, starting out, there are flags for strings that will later report IP's, to keep everything standardised I recomend following the same structure. This is also where the email structure is made before sending. I you wish to include or change anything else in the email, this is where you should do that as its built to be as user friendly as possable in this section to be organised.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/4_ipCallsAndGenerateEmail.png" alt="Calls ip and sets local variables, also sends email here." width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #5</u>] Get IP Method</h1>
+    <p>This section of code is where the get IP method used by the other sections is used, it is not recomended to change the code here, if you want to change the souce of an IP call you can change strings in the string arrays as part of Segment #2 and then the index # of the corresponding url call (located in the next grouping of variables below the arrays).
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/5_getIpAddressMethod.png" alt="Method that gets the IP addresses" width="100%">
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/55_getIpAddressMethodEnd.png" alt="Method that gets the IP addresses continued" width="100%" style="margin-top:-3%;">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #6</u>] Get HostName and Printparts Method</h1>
+    <p>This section contains the method to get both the hostname wich can be modifed or used as an example for making your own fit in, Printparts is not used in this version by default, but contains usefull code for reading parts of an email if you wish to setup two way commucation over email to this program or have a congif file based in it's email which will control the setting used.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/6_getHostNameAndPrintparts.png" alt="Get Hostname and Printparts Method" width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #7</u>] Wrapped call to send email</h1>
+    <i>This call will be here for all future versions (as much as it can be) and will be kept for backwards compatibaly if something ever comes up.</i>
+    <p>Self explanatory? Allows easy calls for the main account while allowing the modularity of having a specific call email method.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/7_portedSendEmail.png" alt="Short wrapped call" width="100%">
+    </p>
+</div>
+<div class="code_segments" style="width:70vw;" id="centerH">
+    <h1>[<u>Segment #8</u>] </h1>
+    <i>This call will be here for all future versions (as much as it can be) and will be kept for backwards compatibaly if something ever comes up.</i>
+    <p>This method is where the actual call to send an email is made and is where new users wanting more customizability but without much programming can change the strings druing printout or hardcode an addition to the subject or contents to identify the bot sending the email instead of doing this as part of section #4.
+    <img id="videoLeftBox" src="/../../Images/StartupEmailNotifyer/Code/8_sendEmailMethod.png" alt="Send email method" width="100%">
+    </p>
+</div>
+
+
+
+
+
+<div class="disclaimer" style="left:37vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyer.html" style="text-decoration:none;">Main</a>
+</div>
+</div>
+<div class="disclaimer" style="left:43vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerFRQ.html" style="text-decoration:none;">F.R.Q.</a>
+</div>
+</div>
+<div class="disclaimer" style="left:51vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerQuickstart.html" style="text-decoration:none;">Quickstart</a>
+</div>
+</div>
+<div class="disclaimer" style="left:60vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerAdvanced.html" style="text-decoration:none;">Advanced</a>
+</div>
+</div>
+
+
+
+    <br>
+    <br>
+    <br>
+
+  </body>
+</html>

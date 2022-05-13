@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>42Null's Github</title>
+    <link href="/../../style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- <div id="favicon-head"></div><script>$(function(){$("#favicon-head").load("../../../PageFragments/fav.html");});</script> -->
+    <link rel="../../Images/favicons/apple-touch-icon" sizes="180x180" href="../Images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../Images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../Images/favicons/favicon-16x16.png">
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="GitHub-stats.js" type="text/javascript"></script>
+--> 
+<script>
+$(document).ready(function(){
+         user = '42null'
+        apirepo = `https://api.github.com/users/${user}`
+        
+   listrepos = document.createElement('ul')
+        document.getElementById('github').appendChild(listrepos)
+        $.getJSON(apirepo + '/repos', function (data) {
+            console.log('data now', data)
+
+            function compare(a, b) {
+                if (a.watchers > b.watchers) {
+                    return -1
+                }
+                if (a.watchers < b.watchers) {
+                    return 1
+                }
+                
+                return 0
+            }
+
+            data.sort(compare)
+            data.forEach(v => {
+
+                listItemRepo = document.createElement('li')
+                listrepos.appendChild(listItemRepo)
+                hlink = document.createElement('a')
+                listItemRepo.appendChild(hlink)
+                // hlink.textContent = `${v.description} | Stars: ${v.watchers}`
+                
+                hlink.textContent = `${v.language}: ${v.name} | Stars: ${v.watchers}`
+                // 
+                hlink.href = v.html_url
+                hlink.target="_blank"
+            })
+        })
+});
+</script>
+
+
+
+</head>
+
+<script src="script.js"></script>
+
+<body><!-- <body onload="load_home()"> -->
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+        <!--Navigation bar-->
+    <div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/PageFragments/nav.html");});</script>
+
+    <!-- Change to Developer? -->
+    <div class="image_banner_github">
+    <div class="image_banner_text_github" id="image_banner_text" style="background-color: #5959597a; width: 50vw;">
+        <h3 style="font-size: 3vh">On</h3>
+        <h1 style="font-size: 4vh">Github</h1>
+        <h2 style="font-size: 3vh">I am...</p>
+        <h1 style="font-family: 'Courier New', monospace; font-size: 6vh"><u>42Null</u></h1>
+        <button style="font-size: 3vh" title="Go to github.com" onclick=" window.open('https://github.com/42null', '_blank'); return true;">See What I've Done</button>
+        </form>
+    </div>
+    </div>
+
+<!-- <br><a class="breakGrey1"></a> -->
+
+<div class="GithubInfo" style="margin-bottom: 50px;">
+    <div class="sidebar1" style="margin-bottom: 30px;">
+        <img src="https://avatars.githubusercontent.com/u/67847710" alt="Image pulled from Github user account" style="width:20vw;height:20wv;">
+        <!-- style="width:256px;height:256px;"> -->
+        <h2><center>42Null</center></h2>
+        <p><center><i>Current Avatar Icon</center></i></p>
+        <h3><center></center></h3>
+
+    </div class="sidebar1">
+    
+    <h1 style="font-size: 5vh;"><center>
+    <a href='https://github.com/42null' target="_blank"><img src='/../../Images/chainLink.png' style='width:50px;height:60px; display:block; margin:0 auto;'/>
+        
+        <u id="primary_darkest">My Github</u></center></h1></a>
+        <!-- 🔗 -->
+    <!-- <br> -->
+
+    
+    <p id="indent">I like to push some of my more professional projects to github as it is my git repoitory of choice. Below is a list of repositories I am contributing to, as well as a list of all the repositories in my account.</p>
+    <ul style="background-color: var(--github_background_blue);">
+        <li><a href="../Projects/Java/SEPIA-Extensions.html">SEPIA-Extensions</a></li>
+        <li><a href="https://github.com/kettlemorainerc/stardestroyer" target="_blank">Stardestroyer</a> (Now Archived)</li>
+    </ul>
+
+
+    <div id="primary_darkest"><h1><u>List Of My Github Repositories</u>*</h1><h2>(automaticly pulled)</h2></div>
+        <center><h3 style="margin-left:20vw;"><i>*This list may include projects that are no longer under development</i></h3></center>
+    <h3>Language</h3>
+    <div id=github style="background-color: white; margin-left:0vw;"></div>
+    
+</div class="GithubInfo">
+
+  </body>
+</html>

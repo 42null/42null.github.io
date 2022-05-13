@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="/../../style.css" rel="stylesheet" type="text/css"/>
+    <title>Startup Email Quickstart</title>
+    <link rel="../../../../Images/favicons/apple-touch-icon" sizes="180x180" href="../Images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../Images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../Images/favicons/favicon-16x16.png">
+    <!-- <div id="head-placeholder"></div><script>$(function(){$("#head-placeholder").load("/../../PageFragments/head.html");});</script> -->
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!--Navigation bar-->
+<div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
+
+<!-- <div class="disclaimer">Please note, Replit limits the emmbead box. Try "open in replit" or zooming out to view it in it's entirety</div> -->
+<br>
+    <div id="primary_light"><p id="centerH" style="border: 8px solid #003a8b;width: 30vw; background-color:#265197; font-size:5vh; margin:auto;">QUICKSTART</p></div></div>
+<!-- bfebec -->
+    <center><p id="indent" style="border-radius: 25px;  border: 6px solid #003a8b;with: 98vw;">This is a quickstart guide for my "Startup Email Notificaton Program". For those who want to add their own commands, there is a guide explaining all methods <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerAdvanced.html">here</a>.</p></center>
+
+
+
+
+
+
+<div class="version">
+    <h2 id="headerText" style="text-align:center;">Latest Release:<br> <u id="contentText">You can find and download the latest post of this pogram <a href="/../../NavPages/Downloads.html" target="_blank">here</a> at my downlaods page.</u></h2>
+</div>
+
+
+
+<div id="scalledRoundedCorners2" id="inline">
+<div class="display" clear="both" id="centerH">
+    <br>
+    <h1 id="headerText" style="text-align:center;"><u>Steps</u>:</h1>
+        <p id="contentText2" style="padding-left:2vw;padding-right:2vw;overflow:break-word;width:90%;"><i class="tab">
+            <ol style="width:90%;line-height:5vh;">
+                <li>Download the latest version of the software from my downloads page, which you can find <a href="../../../Downloads/" >here</a>.</li>
+                <br>
+                <li>Unzip the folder, if you need to do this using the command line, there are plenty of great guides out there for diffrent distrubutions.</li>
+                <br>
+                <li>To send emails, an Oracle package is required and I cannot simply provide their packages with my download, therefore, during this step you will need to download a package this link from Oracle. The video to the right will go through the steps.</li>
+                <br>
+                <li>Unzip this, locate "activation.jar" as well as "javax.mail.jar" and then place them in the directory of your main project directory (same as main.java).</li>
+                <br>
+                <li>Install or select Java 8, to change versions (for Ubuntu) use the command "sudo update-alternatives --config java".</li>
+                <br>
+                <li>Add the sending, recieveing, and password for the email addresses you wich to use in the StartupEmailNotifier class (These will be the first variables listed). Please note, your password sits clear-text within the file, it is your job to ensure propper protections are made for the file.</li>
+                <br>
+                <li><u>Compile</u> the program with the command "javac com/company/Main.java com/company/UI.java -cp com/company/activation.jar -cp com/company/javax.mail.jar" (must be run from the project root folder with this specific structure).</li>
+                <br>
+                <li>From the same location in the terminal <u>run</u> the program by executing the command "java -cp .:com/company/activation.jar.:com/company/javax.mail.jar com.company.Main com/company/UI" </li>
+                <br>
+                <li>Done! The program with default settings will print out everything it found and then send an email from the provided address.</li>
+            </ol>
+        </div>
+        <br id="">
+
+
+    <br>
+</div class="display">
+
+
+</div>
+
+
+
+<div class="videoLeftBox" id="clippedCorners">
+    <br>
+    <h1 id="headerText" style="text-align:center;"><u>Downloading Oracle package</u>:</h1>
+        <video id="videoLeftBox" style="margin-left:5%;border-radius:2vh;" width="90%" height="auto" controls>
+            <source src="/../../Videos/DownloadOracle.webm" type="video/webm">
+            Downloading Oracle package
+        </video>
+        <div style="color: var(--primary_dark_dark);">
+        <h2 id="contentText2" style="padding-left:2vw;padding-right:2vw;">
+            <center><div style="text-align:center;">Watch this video to learn the steps to downloading a required email .jar package from Oracle. <br><br>
+            <a href="https://www.oracle.com/java/technologies/java-archive-downloads-java-plat-downloads.html" target="_blank" style="font-weight:normal;">Oracle Link Here (Looking for "jmx-1_2_1-ri.zip")</a></h2></div></center>
+</div>
+</div>
+
+<!-- <div class="FRQFloating"> -->
+<!-- <div class="disclaimer">
+    <h2 class="FRQFloating" style="background-color:;">FRQ</h2>
+        <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerFRQ.html" FRQ</a>
+</div> -->
+
+
+<div class="disclaimer" style="left:37vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyer.html" style="text-decoration:none;">Main</a>
+</div>
+</div>
+<div class="disclaimer" style="left:43vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerFRQ.html" style="text-decoration:none;">F.R.Q.</a>
+</div>
+</div>
+<div class="disclaimer" style="left:51vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerQuickstart.html" style="text-decoration:none;">Quickstart</a>
+</div>
+</div>
+<div class="disclaimer" style="left:60vw; width:max(10vw,fit-content);">
+<div class="FRQFloating">
+    <a href="/../../NavPages/Projects/Java/StartupEmailNotifyerAdvanced.html" style="text-decoration:none;">Advanced</a>
+</div>
+</div>
+
+
+
+
+
+<!-- <img id="inline" src="https://onlineimagetools.com/images/examples-onlineimagetools/color-grid.png" alt="Girl in a jacket" style="width:200px;height:600px;"> -->
+
+
+<!-- StartupEmailNotifyerQuickstart -->
+
+
+
+
+    <!-- <div class="container">
+       <div class="item" id="centerH" style="background-color:var(--header_background);">
+            <h1>Player's Turn</h1>
+            <img src="../../../Images/Monoply/MonoplyInPlay.png" alt="Monoply Game In Play" style="width:50vh;" title="It's AJ's turn" id="centerH" class="zoom">
+            <br>
+            <br>
+        </div>
+       <div class="item" id="centerH" style="background-color:var(--header_background);">
+            <h1>Game Ends</h1>
+            <img src="../../../Images/Monoply/MonoplyLoose.png" alt="Monoply Game In Play" style="width:65vh;" title="AJ looses" id="centerH" class="zoom">
+            <br>
+            <br>
+        </div>
+
+
+
+        <br>
+    </div> -->
+
+    <br>
+    <br>
+    <br>
+
+  </body>
+</html>

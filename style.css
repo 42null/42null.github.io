@@ -15,7 +15,10 @@ body, html{
     --primary_dark: #5f9ea0;
     --primary_dark_dark: #004547;
     --primary_darkest: #002424;
+    
     --nav_color: #74ebcd;
+    --clearGreyImageOverlay: #5959597a;
+    
     --test: rgba(63, 63, 63, 0.374);
     
     --instructions_background: #cfcfcff6;/*changed for light mode to secondary_background*/
@@ -130,12 +133,13 @@ body, html{
         --app_guessing_background: var(--app_guessing_dark);
         --display_for_dark: #c7a4cff8;
 
+/*         --primary_light_light: var(--dark_lighter_background); TODO: fix, right now it changes too much */
         --boarder: var(--primary_dark_dark);
         --boarder_infill: var(--primary_light_light);
         --boarder_text: var(--primary_darkest);
 
 /*         --secondary_background: var(--dark_lighter_background); */
-        --secondary_background: var(--primary_light_light);
+        --secondary_background: var(--primary_light_light);/*@@@@@@*/
 
         --videoTitle: var(--primary_light); 
 
@@ -184,6 +188,9 @@ p{
     font-weight: normal;
 }
 #Font_Danceing{
+}
+.Greenhouse_Cursive{
+    font-family: 'Satisfy';   
 }
 .Allura{
 /*     <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'> */
@@ -548,6 +555,29 @@ li{
   object-fit: cover;
 }
 
+.nextToEachSpaced{
+    text-size: 30em;
+/*     photoGallery.style.width = '100%';
+    photoGallery.style.height = '100%';
+    photoGallery.style.display = 'flex';
+    photoGallery.style.flexWrap = 'wrap';
+    photoGallery.style.justifyContent = 'center';
+    photoGallery.style.alignItems = 'center';
+    document.body.appendChild(photoGallery);
+    
+    for (var i = 0; i < 19; i++) {
+        var photoTile = document.createElement('div');
+        photoTile.style.width = '20vh';
+        photoTile.style.height = '20vh';
+        photoTile.style.backgroundColor = '#ccc';
+        photoTile.style.margin = '20px';
+        photoTile.style.border = '8px solid black';
+        photoGallery.appendChild(photoTile);
+    } */
+}
+
+
+
 .image_banner::before {
   position: absolute;
   content: '';
@@ -761,7 +791,7 @@ li{
   float: left;
   overflow: hidden;
 }
-#right, a #left{
+#left, a #left{
     float: left;
     overflow: hidden;
 }

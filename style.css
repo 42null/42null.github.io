@@ -17,7 +17,9 @@ body, html{
     --primary_darkest: #002424;
     
     --nav_color: #74ebcd;
-    --clearGreyImageOverlay: #5959597a;
+    --nav_color_greenhouse:  #5ecf507a;
+    --clearGreyImageOverlay: #595959aa;
+    --clearGreyImageOverlay_greenhouse: #35354577;
     
     --test: rgba(63, 63, 63, 0.374);
     
@@ -827,6 +829,12 @@ li{
   background-color: rgb(79, 167, 79);
   color: #575681;
 }
+.navbar #secondHighlight a:hover{
+  /* background-color: #575681; */
+background-color: var(--clearGreyImageOverlay_greenhouse);
+    color: #575681;
+}
+
 .dropdown-content {
     vertical-align: 0;
     text-align: center; 

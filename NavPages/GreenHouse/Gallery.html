@@ -1,0 +1,36 @@
+<script>
+var photoGallery = document.createElement('div');
+photoGallery.style.width = '100%';
+photoGallery.style.height = '100%';
+photoGallery.style.display = 'flex';
+photoGallery.style.flexWrap = 'wrap';
+photoGallery.style.justifyContent = 'center';
+photoGallery.style.alignItems = 'center';
+document.body.appendChild(photoGallery);
+
+for (var i = 0; i < 19; i++) {
+  var photoTile = document.createElement('div');
+  photoTile.style.width = '20vh';
+  photoTile.style.height = '20vh';
+  photoTile.style.backgroundColor = '#ccc';
+  photoTile.style.margin = '20px';
+  photoTile.style.border = '8px solid black';
+  photoGallery.appendChild(photoTile);
+}
+
+// var photoTiles = document.getElementsByTagName('div');
+// for (var i = 0; i < photoTiles.length; i++) {
+//   var photoTile = photoTiles[i];
+//   photoTile.style.backgroundImage = '';
+//   photoTile.style.backgroundSize = 'cover';
+// }
+
+var photoTiles = document.getElementsByTagName('div');
+
+for (var i = 0; i < photoTiles.length; i++) {
+  var photoTile = photoTiles[i];
+  // photoTile.style.backgroundImage = 'url(images/' + images[i] + ')';
+  photoTile.style.backgroundImage = 'url(../../Images/GreenHouse/CollagePage/' +i+".jpg" + ')';
+  photoTile.style.backgroundSize = 'cover';
+  photoTile.style.backgroundPosition = 'center';
+}

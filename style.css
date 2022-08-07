@@ -591,6 +591,16 @@ li{
 /*     height:auto; */
 }
 
+.catolog_block{
+/*     background-color: var(--clearGreyImageOverlay_greenhouse); */
+    background-color: white;
+    width: 95%;
+/*     height:100%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding:15px;
+}
+
 
 
 .image_banner::before {
@@ -814,6 +824,13 @@ li{
     float: right;
     overflow: hidden;
 }
+.breakAndHyphensAll{
+/*­*/
+/*     word-break: break-all; */
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
 .dropdown .dropbtn {
       margin: 2px;
 
@@ -831,7 +848,7 @@ li{
 }
 .navbar #secondHighlight a:hover{
   /* background-color: #575681; */
-background-color: var(--clearGreyImageOverlay_greenhouse);
+    background-color: var(--clearGreyImageOverlay_greenhouse);
     color: #575681;
 }
 
@@ -879,7 +896,7 @@ background-color: var(--clearGreyImageOverlay_greenhouse);
 
 
 .palletbox{
-    height:1vw;width:10vw; border-style:hidden hidden dashed solid;border-width:5px;margin:5vw 5vw 2vw 5vw;
+    height:1vw;width:10vw; border-style:hidden hidden dashed solid;border-width:5px;margin:5vw 5vw 2vw 1vw;
     height:1%;
     /* position: sticky; */
 }

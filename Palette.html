@@ -6,7 +6,7 @@
     <title>Pallet</title>
 </head>
 
-<body>
+<body style="overflow-x: scroll;">
     <!-- border-bottom-style: as specified
 border-right-style: as specified
 border-top-style: as specified -->
@@ -18,23 +18,136 @@ border-top-style: as specified -->
     <div class="palletbox" style="background-color: var(--primary_dark_dark);">
     <div class="palletbox" style="background-color: var(--primary_darkest);">
     <div class="palletbox" style="background-color: var(--nav_color);">
+    <div class="palletbox" style="background-color: var(--nav_color_greenhouse);">
+    <div class="palletbox" style="background-color: var(--clearGreyImageOverlay);">
+    <div class="palletbox" style="background-color: var(--clearGreyImageOverlay_greenhouse);">
     <div class="palletbox" style="background-color: var(--test);">
-    <div class="palletbox" style="background-color: var(--image_background);">
     <div class="palletbox" style="background-color: var(--instructions_background);">
     <div class="palletbox" style="background-color: var(--header_background);">
-    <div class="palletbox" style="background-color: var(--header_background);">
-    <div class="palletbox" style="background-color: var(--header_text);">
+    <div class="palletbox" style="background-color: var(--boarder);">
+    <div class="palletbox" style="background-color: var(--boarder_infill);">
+    <div class="palletbox" style="background-color: var(--secondary_background);">
+    <div class="palletbox" style="background-color: var(--dark_lighter_background);">
+    <div class="palletbox" style="background-color: var(--light_darker_background);">
     <div class="palletbox" style="background-color: var(--app_chalkboard_white);">
     <div class="palletbox" style="background-color: var(--app_chalkboard_background);">
     <div class="palletbox" style="background-color: var(--app_guessing_normal);">
     <div class="palletbox" style="background-color: var(--app_guessing_light);">
-    </div>
-    <div class="container">
+    <div class="palletbox" style="background-color: var(--app_guessing_dark);">
+    <div class="palletbox" style="background-color: whitesmoke;">
+    <div class="palletbox" style="background-color: var(background-color);">
+    <div class="palletbox" style="background-color: var(--primary_light_light);">
+    <div class="palletbox" style="background-color: black;">
+    <div class="palletbox" style="background-color: var(--primary_dark_dark);">
+    <div class="palletbox" style="background-color: var(--var(primary_dark_dark));">
+    <div class="palletbox" style="background-color: var(--header_text);">
+    <div class="palletbox" style="background-color: rgba(161, 248, 80, 1);">
+    <div class="palletbox" style="background-color: rgb(62, 123, 255);">
+    <div class="palletbox" style="background-color: var(--image_background);">
+    <div class="palletbox" style="background-color: var(--image_background2);">
+    <div class="palletbox" style="background-color: var(--number_guessing_text);">
+    <div class="palletbox" style="background-color: var(--app_guessing_background);">
+    <div class="palletbox" style="background-color: var(--display_for_dark);">
     <div class="palletbox" style="background-color: var(--);">
     <div class="palletbox" style="background-color: var(--);">
+    <div class="palletbox" style="background-color: var(--);">
+    <div class="palletbox" style="background-color: var(--);">
+    <div class="palletbox" style="background-color: var(--);">
+
     </div>
-
-
-
+<!--     <div class="container">
+    <div class="palletbox" style="background-color: var(--);">
+    <div class="palletbox" style="background-color: var(--);">
+    </div> -->
 </body>
 
+    ::selection {
+        color: ;
+        background: ;
+    }
+    :root{
+        : #fff;
+        : var(--header_background);
+        : var(--app_guessing_dark);
+        : var(--app_guessing_light);
+
+        : #2cb0c7e1;
+
+        --boarder: var(--primary_dark_dark);
+        --boarder_infill: var(--primary_dark);
+        --boarder_text: var(--primary_darkest);
+
+        --secondary_background: var(--light_darker_background);
+        --instructions_background: var(--secondary_background);
+
+        --github_background: #86c4fd;
+        --github_background_blue: #86c3fd79;
+
+    }
+}
+/* Light mode */
+@media (prefers-color-scheme:dark){
+
+/* [data-theme="dark"] {
+ */    .toBeReplaced:after {
+        content: "Dark Mode";
+    }
+    body {
+        background-color: #600160;/* #790079 */
+    }
+    #contentText {
+        /* color: #a5f2ff; */
+        color: #001fcc;
+    }
+    #headerTitle {
+        color: --var(primary_dark_dark);
+    }
+    #headerText {
+        color: #1f4d8d;
+    }
+    ::selection {
+        color: rgba(255, 166, 0, 0.85);
+        /* @@@ CHANGE ME */
+        background: rgba(29, 83, 184, 0.85);
+    }
+
+    a​:visited { color: #83ecff;}
+
+    :root{
+        --image_background: #000;
+        --image_background2: var(--primary_darkest);
+        --number_guessing_text: var(--app_guessing_normal);
+        --app_guessing_background: var(--app_guessing_dark);
+        --display_for_dark: #c7a4cff8;
+
+/*         --primary_light_light: var(--dark_lighter_background); TODO: fix, right now it changes too much */
+        --boarder: var(--primary_dark_dark);
+        --boarder_infill: var(--primary_light_light);
+        --boarder_text: var(--primary_darkest);
+
+/*         --secondary_background: var(--dark_lighter_background); */
+        --secondary_background: var(--primary_light_light);/*@@@@@@*/
+
+        --videoTitle: var(--primary_light); 
+
+        --github_background: #3681a7;
+        --github_background_blue: #3681a7;
+    }
+}
+
+a:link { color: var(--primary_dark_dark);}
+a:visited { color: var(--primary_darkest);}
+li a:hover{
+    color: #163663;
+}
+
+p{
+    /* font-size: clamp(16px, 2.75vh, 32px); */
+}
+
+
+
+#primary_light{color: var(--primary_light);}/*#61e9ee*/
+#primary_dark{color: var(--primary_dark);}
+#primary_dark_dark{color: var(--primary_dark_dark)}
+#primary_darkest{color: var(--primary_darkest)}

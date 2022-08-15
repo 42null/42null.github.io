@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="/../../style.css" rel="stylesheet" type="text/css"/>
+    <link href="/../../style.css" rel="stylesheet" type="text/css" />
 
     <title>Catalog</title>
-    <link rel="../../Images/favicons/apple-touch-icon" sizes="180x180" href="../../Images/favicons/apple-touch-icon.png">
+    <link rel="../../Images/favicons/apple-touch-icon" sizes="180x180"
+        href="../../Images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../Images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../Images/favicons/favicon-16x16.png">
     <!-- <div id="head-placeholder"></div><script>$(function(){$("#head-placeholder").load("/../../PageFragments/head.html");});</script> -->
     <script src="https://kit.fontawesome.com/eaed8eb078.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <style src="/PageFragments/navStyle.css"></style>
     <!--Navigation bar-->
-<div id="nav-placeholder"></div><script>$(function(){$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
+    <div id="nav-placeholder"></div>
+    <script>$(function () {$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
 
     <!-- Change to Developer? -->
     <div class="image_banner">
-    <div class="image_banner_text_linkedIn" id="image_banner_text" style="background-color: #5959597a;">
-        <h1 style="font-size: 10vh">Search Catolog</h1>
-        <center><p style="font-size: 4vh">Find the perfect addition to your<a id="animated_typing" style="background-color: #afd8d833;
-"></a><a id="blinking_cursor">|</a></p></center>
-<!--         <button style="font-size: 3vh" title="Go to www.linkedin.com" onclick="window.open('https://www.linkedin.com/in/joseph-memmel-34a7ab168?trk=people-guest_people_search-card', '_blank'); return true;"><i class="fab fa-linkedin"></i></button> -->
-        </form>
+        <div class="image_banner_text_linkedIn" id="image_banner_text" style="background-color: #5959597a;">
+            <h1 style="font-size: 10vh">Search Catolog</h1>
+            <center>
+                <p style="font-size: 4vh">Find the perfect addition to your<a id="animated_typing" style="background-color: #afd8d833;
+"></a><a id="blinking_cursor">|</a></p>
+            </center>
+            <!--         <button style="font-size: 3vh" title="Go to www.linkedin.com" onclick="window.open('https://www.linkedin.com/in/joseph-memmel-34a7ab168?trk=people-guest_people_search-card', '_blank'); return true;"><i class="fab fa-linkedin"></i></button> -->
+            </form>
+        </div>
     </div>
-    </div>
 
 
 
 
 
 
-    
-<!-- <div class="AboutMes"> -->
-<!-- <div class="catolog_block" style="background-color:var(--secondary_background)"> -->
-<!-- <div class="catolog_block"> -->
+
+    <!-- <div class="AboutMes"> -->
+    <!-- <div class="catolog_block" style="background-color:var(--secondary_background)"> -->
+    <!-- <div class="catolog_block"> -->
     <!-- <h1 id="primary_dark_dark" style="font-size: 5vh;text-align:center;font-family: Lato;">· Accomplishments ·</h1> -->
-<!--     <div class="nextToEachSpaced" id="clippedCorners" style="background-color:var(--secondary_background)">
+    <!--     <div class="nextToEachSpaced" id="clippedCorners" style="background-color:var(--secondary_background)">
         <br>
         <h1 id="headerText" style="text-align:center;">Trees</h1>
         <br>
@@ -50,7 +56,7 @@
                 <center><div style="text-align:center;">Test</h2></div></center>
         </div> -->
 
-<!-- @@@@@@@@@@@@ USE JS
+    <!-- @@@@@@@@@@@@ USE JS
         
         to make out of list
         
@@ -69,70 +75,71 @@
 
 
 
-  </body>
-
-    <script>
-        var headersToAnimate = [" Lawn."," Garden."," House."," Workplace."," Desk.","..."];
-        var startReversAnimationAfter = 3000; //ms
-
-
-        function reverseAnimation(headerIndex){
-            var i = headersToAnimate[headerIndex].length -1, delay = 0;
-            for (; i >= 0 ; i--, delay++) {
-                let string = headersToAnimate[headerIndex].substr(0, i);
-                setTimeout('document.getElementById("animated_typing").innerHTML = \'' + string + '\';', 100 * delay);
-          }
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+1) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length+2) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+4) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length+6) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+8) * 200);
-           setTimeout(function(){ animateHeaders(headerIndex + 1)}, 100 * delay + startReversAnimationAfter);
-
-        }
-        function animateHeaders(headerIndex){
-          var i =0;
-          if(headerIndex ==  headersToAnimate.length){
-            headerIndex = 0;
-          }
-          for (; i < headersToAnimate[headerIndex].length; i++) {
-            let string = headersToAnimate[headerIndex][i]
-            setTimeout('document.getElementById("animated_typing").innerHTML += \'' + string + '\';', 200 * i);
-          }
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+2) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length+4) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+6) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length+8) * 200);
-          setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length+10) * 200);
-
-          // setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length-1) * 200 + 105);
-         setTimeout(function(){ reverseAnimation(headerIndex)}, 200 * i + startReversAnimationAfter);
-
-            
-        }
-
-         setTimeout(function(){ animateHeaders(0)}, 1000);
-    </script>
+</body>
 
 <script>
-    var categories = ["Trees","House­plants","Succulents","Carnivorous","Garden","Natives","Flowering","Starters and Kits","Seeds","Verified Propagations"];
+    var headersToAnimate = [" Lawn.", " Garden.", " House.", " Workplace.", " Desk.", "..."];
+    var startReversAnimationAfter = 3000; //ms
 
-    
+
+    function reverseAnimation(headerIndex) {
+        var i = headersToAnimate[headerIndex].length - 1, delay = 0;
+        for (; i >= 0; i--, delay++) {
+            let string = headersToAnimate[headerIndex].substr(0, i);
+            setTimeout('document.getElementById("animated_typing").innerHTML = \'' + string + '\';', 100 * delay);
+        }
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 1) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length + 2) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 4) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length + 6) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 8) * 200);
+        setTimeout(function () {animateHeaders(headerIndex + 1)}, 100 * delay + startReversAnimationAfter);
+
+    }
+    function animateHeaders(headerIndex) {
+        var i = 0;
+        if (headerIndex == headersToAnimate.length) {
+            headerIndex = 0;
+        }
+        for (; i < headersToAnimate[headerIndex].length; i++) {
+            let string = headersToAnimate[headerIndex][i]
+            setTimeout('document.getElementById("animated_typing").innerHTML += \'' + string + '\';', 200 * i);
+        }
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 2) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length + 4) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 6) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "" + '\';', (headersToAnimate[headerIndex].length + 8) * 200);
+        setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length + 10) * 200);
+
+        // setTimeout('document.getElementById("blinking_cursor").innerHTML = \'' + "|" + '\';', (headersToAnimate[headerIndex].length-1) * 200 + 105);
+        setTimeout(function () {reverseAnimation(headerIndex)}, 200 * i + startReversAnimationAfter);
+
+
+    }
+
+    setTimeout(function () {animateHeaders(0)}, 1000);
+</script>
+
+<script>
+    var categories = ["Trees", "House­plants", "Succulents", "Carnivorous", "Garden", "Natives", "Flowering", "Starters and Kits", "Seeds", "Verified Propagations"];
+
+
     var grid = document.createElement('div');
     grid.style.display = 'grid';
     grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(100px, 1fr))';
     grid.style.gridGap = '10px';
     document.body.appendChild(grid);
-    for(var i = 0; i < categories.length; i++){
-        var cellBackground = document.createElement('div');
+    for (var i = 0; i < categories.length; i++) {
+        var cellBackground = document.createElement('a');
         var cellInner = document.createElement('div');
         // var image = document.createElement('img');
         // cellBackground.style.backgroundColor = '#000';
         cellBackground.style.padding = '20px';
         cellBackground.style.textAlign = 'center';
-        cellBackground.setAttribute('id','clippedCorners');
+        cellBackground.setAttribute('id', 'clippedCorners');
+        cellBackground.setAttribute('href', "http://example.co");
 
-        cellInner.setAttribute("class","breakAndHyphensAll");
+        cellInner.setAttribute("class", "breakAndHyphensAll");
         cellInner.style.textAlign = 'inherit';
         cellInner.style.fontSize = "2em";
         cellInner.style.fontWeight = 'bold';
@@ -140,12 +147,12 @@
         // cellInner.style.color = "white";
         // cellInner.style.mixBlendMode = "difference";
         cellInner.innerHTML += categories[i].charAt(0);
-        for(var j = 1; j < categories[j].length; j++){
-            // cellInner.innerHTML += categories[i].charAt(j);
-            // cellInner.innerHTML += "­";
-
+        for (var j = 1; j < categories[i].length; j++) {
+            cellInner.innerHTML += "­";
+            cellInner.innerHTML += categories[i].charAt(j);
         }
-
+        cellInner.style.textDecoration = "none";
+        cellBackground.style.textDecoration = "none"
         // image.src = "../../Images/GreenHouse/CollagePage/"+i+".jpg";
         // image.style.width = "100%";
         // cell.appendChild(image);
@@ -154,13 +161,13 @@
         cellInner.style.backgroundPosition = 'center';
         cellInner.style.color = 'black';
         cellBackground.style.background = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('http://placehold.it/350x150')"
-        cellInner.style.opacity= 0.6;
+        cellInner.style.opacity = 0.6;
         cellBackground.appendChild(cellInner);
-        cellBackground.style.backgroundImage = 'url(../../Images/GreenHouse/CollagePage/' +i+".jpg" + ')';
+        cellBackground.style.backgroundImage = 'url(../../Images/GreenHouse/CollagePage/' + i + ".jpg" + ')';
         grid.appendChild(cellBackground);
     }
 </script>
-    
+
 <!--     <div class="demo-wrap">
   <img
     class="demo-bg"
@@ -192,4 +199,5 @@
   position: relative;
 }
     </style> -->
+
 </html>

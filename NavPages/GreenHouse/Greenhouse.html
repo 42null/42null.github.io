@@ -20,7 +20,7 @@
 <br>
     <div id="primary_light"><p class="Greenhouse_Cursive" id="centerH" style="border: 8px solid #003a8b;width: 30vw;background-color:#265197; font-size:10vh; margin:auto;">The Greenhouse</p></div>
 <!-- bfebec -->
-    <center><p id="indent" style="border-radius: 25px;  border: 6px solid #003a8b;width: 80vw;">All Greenhouse pages are currently under development as an additon to this website and therefore pages might not work. Click <a href="../Projects/Servers/42Nulls/all42nulls.html">here</a> to see which deployment server you are on.</p></center>
+    <center><p id="indent" style="border-radius: 25px;  border: 6px solid #003a8b;width: 80vw;">Some Greenhouse pages are still currently under development as an additon to this website and therefore pages might not work. Click <a href="../Projects/Servers/42Nulls/all42nulls.html">here</a> to see which deployment server you are on.</p></center>
 
 
     <br>
@@ -29,43 +29,3 @@
 
   </body>
 </html>
-
-
-<script>
-var photoGallery = document.createElement('div');
-photoGallery.style.width = '100%';
-photoGallery.style.height = '100%';
-photoGallery.style.display = 'flex';
-photoGallery.style.flexWrap = 'wrap';
-photoGallery.style.justifyContent = 'center';
-photoGallery.style.alignItems = 'center';
-document.body.appendChild(photoGallery);
-
-for (var i = 0; i < 19; i++) {
-  var photoTile = document.createElement('div');
-  photoTile.style.width = '20vh';
-  photoTile.style.height = '20vh';
-  photoTile.style.backgroundColor = '#ccc';
-  photoTile.style.margin = '20px';
-  photoTile.style.border = '8px solid black';
-  photoGallery.appendChild(photoTile);
-}
-
-// var photoTiles = document.getElementsByTagName('div');
-// for (var i = 0; i < photoTiles.length; i++) {
-//   var photoTile = photoTiles[i];
-//   photoTile.style.backgroundImage = '';
-//   photoTile.style.backgroundSize = 'cover';
-// }
-
-var photoTiles = document.getElementsByTagName('div');
-
-for (var i = 0; i < photoTiles.length; i++) {
-  var photoTile = photoTiles[i];
-  // photoTile.style.backgroundImage = 'url(images/' + images[i] + ')';
-  photoTile.style.backgroundImage = 'url(../../Images/GreenHouse/CollagePage/' +i+".jpg" + ')';
-  photoTile.style.backgroundSize = 'cover';
-  photoTile.style.backgroundPosition = 'center';
-}
-
-</script>

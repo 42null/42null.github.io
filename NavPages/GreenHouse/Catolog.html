@@ -23,9 +23,8 @@
     <div id="nav-placeholder"></div>
     <script>$(function () {$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
 
-    <!-- Change to Developer? -->
     <div class="image_banner">
-        <div class="image_banner_text_linkedIn" id="image_banner_text" style="background-color: #5959597a;">
+        <div class="image_banner_text" id="image_banner_text" style="background-color: #5959597a;">
             <h1 style="font-size: 10vh">Search Catolog</h1>
             <center>
                 <p style="font-size: 4vh">Find the perfect addition to your<a id="animated_typing" style="background-color: #afd8d833;
@@ -35,6 +34,7 @@
             </form>
         </div>
     </div>
+    <div id="searchByCategory" style="backgorund-color:#fff;">TEST</div>
 
 
 
@@ -121,14 +121,19 @@
 </script>
 
 <script>
-    var categories = ["Trees", "House­plants", "Succulents", "Carnivorous", "Garden", "Natives", "Flowering", "Starters and Kits", "Seeds", "Verified Propagations"];
+    var categories = ["Trees", "House­plants", "Succul­ents", "Carnivor­ous", "Garden", "Natives", "Flowering", "Starters and Kits", "Seeds", "Verified Propag­ations","Gourds"];
 
 
     var grid = document.createElement('div');
     grid.style.display = 'grid';
-    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(100px, 1fr))';
+    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
     grid.style.gridGap = '10px';
-    document.body.appendChild(grid);
+    var addToElement = document.getElementById('searchByCategory');
+    addToElement.style.backgroundColor = "black";
+    // addToElement.insertBefore(grid, addToElement.firstChild);
+    // grid.style.width = "80%";
+    grid.style.padding = "2% 2% 2% 2%";
+    addToElement.appendChild(grid);
     for (var i = 0; i < categories.length; i++) {
         var cellBackground = document.createElement('a');
         var cellInner = document.createElement('div');
@@ -137,7 +142,7 @@
         cellBackground.style.padding = '20px';
         cellBackground.style.textAlign = 'center';
         cellBackground.setAttribute('id', 'clippedCorners');
-        cellBackground.setAttribute('href', "./Categories/"+categories[i].replace(/­/g, "")+".html");
+        cellBackground.setAttribute('href', "./Categories/" + categories[i].replace(/­/g, "").replace(" ","") + ".html");
 
         cellInner.setAttribute("class", "breakAndHyphensAll");
         cellInner.style.textAlign = 'inherit';
@@ -148,7 +153,7 @@
         // cellInner.style.mixBlendMode = "difference";
         cellInner.innerHTML += categories[i].charAt(0);
         for (var j = 1; j < categories[i].length; j++) {
-            cellInner.innerHTML += "­";
+            // cellInner.innerHTML += "­";
             cellInner.innerHTML += categories[i].charAt(j);
         }
         cellInner.style.textDecoration = "none";

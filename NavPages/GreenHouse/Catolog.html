@@ -23,8 +23,9 @@
     <div id="nav-placeholder"></div>
     <script>$(function () {$("#nav-placeholder").load("/../../PageFragments/nav.html");});</script>
 
+    <!-- Change to Developer? -->
     <div class="image_banner">
-        <div class="image_banner_text" id="image_banner_text" style="background-color: #5959597a;">
+        <div class="image_banner_text_linkedIn" id="image_banner_text" style="background-color: #5959597a;">
             <h1 style="font-size: 10vh">Search Catolog</h1>
             <center>
                 <p style="font-size: 4vh">Find the perfect addition to your<a id="animated_typing" style="background-color: #afd8d833;
@@ -34,45 +35,7 @@
             </form>
         </div>
     </div>
-    <div id="searchByCategory" style="backgorund-color:#fff;">TEST</div>
-
-
-
-
-
-
-
-    <!-- <div class="AboutMes"> -->
-    <!-- <div class="catolog_block" style="background-color:var(--secondary_background)"> -->
-    <!-- <div class="catolog_block"> -->
-    <!-- <h1 id="primary_dark_dark" style="font-size: 5vh;text-align:center;font-family: Lato;">· Accomplishments ·</h1> -->
-    <!--     <div class="nextToEachSpaced" id="clippedCorners" style="background-color:var(--secondary_background)">
-        <br>
-        <h1 id="headerText" style="text-align:center;">Trees</h1>
-        <br>
-        <img src="/../../Images/favicons/android-chrome-512x512.png" style="width:25%; alt='42Null Server Logo'">
-        <div style="color: var(--primary_dark_dark);">
-            <h2 id="contentText2" style="padding-left:2vw;padding-right:2vw;">
-                <center><div style="text-align:center;">Test</h2></div></center>
-        </div> -->
-
-    <!-- @@@@@@@@@@@@ USE JS
-        
-        to make out of list
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        -->
-
-
-
-
+    <div id="searchByCategory" style="backgorund-color:#fff;"></div>
 
 
 </body>
@@ -121,7 +84,7 @@
 </script>
 
 <script>
-    var categories = ["Trees", "House­plants", "Succul­ents", "Carnivor­ous", "Garden", "Natives", "Flowering", "Starters and Kits", "Seeds", "Verified Propag­ations","Gourds"];
+    var categories = ["Trees", "House­plants", "Succu­lents", "Carnivor­ous", "Garden", "Natives", "Flowering", "Starters and Kits", "Seeds", "Verified Propa­gations","Grouds"];
 
 
     var grid = document.createElement('div');
@@ -130,19 +93,15 @@
     grid.style.gridGap = '10px';
     var addToElement = document.getElementById('searchByCategory');
     addToElement.style.backgroundColor = "black";
-    // addToElement.insertBefore(grid, addToElement.firstChild);
-    // grid.style.width = "80%";
-    grid.style.padding = "2% 2% 2% 2%";
+    grid.style.padding = "2% 2% 2%";
     addToElement.appendChild(grid);
     for (var i = 0; i < categories.length; i++) {
         var cellBackground = document.createElement('a');
         var cellInner = document.createElement('div');
-        // var image = document.createElement('img');
-        // cellBackground.style.backgroundColor = '#000';
         cellBackground.style.padding = '20px';
         cellBackground.style.textAlign = 'center';
         cellBackground.setAttribute('id', 'clippedCorners');
-        cellBackground.setAttribute('href', "./Categories/" + categories[i].replace(/­/g, "").replace(" ","") + ".html");
+        cellBackground.setAttribute('href', "./Categories/" + categories[i].replace(/­/g, "") + ".html");
 
         cellInner.setAttribute("class", "breakAndHyphensAll");
         cellInner.style.textAlign = 'inherit';
@@ -158,10 +117,6 @@
         }
         cellInner.style.textDecoration = "none";
         cellBackground.style.textDecoration = "none"
-        // image.src = "../../Images/GreenHouse/CollagePage/"+i+".jpg";
-        // image.style.width = "100%";
-        // cell.appendChild(image);
-        // cellInner.style.backgroundImage = 'url(../../Images/GreenHouse/CollagePage/' +i+".jpg" + ')';
         cellInner.style.backgroundSize = 'cover';
         cellInner.style.backgroundPosition = 'center';
         cellInner.style.color = 'black';
@@ -172,37 +127,4 @@
         grid.appendChild(cellBackground);
     }
 </script>
-
-<!--     <div class="demo-wrap">
-  <img
-    class="demo-bg"
-    src="https://assets.digitalocean.com/labs/images/community_bg.png"
-    alt=""
-  >
-  <div class="demo-content">
-    <h1>Hello World!</h1>
-  </div>
-</div> -->
-
-
-<!--     <style>
-        .demo-wrap {
-  overflow: hidden;
-  position: relative;
-}
-
-.demo-bg {
-  opacity: 0.6;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
-
-.demo-content {
-  position: relative;
-}
-    </style> -->
-
 </html>

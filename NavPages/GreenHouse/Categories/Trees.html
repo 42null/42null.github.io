@@ -93,6 +93,7 @@
 //Picture Buttons
         cellBackground.appendChild(cellInner);
         var buttonSummer = document.createElement('button');
+        var buttonHead = document.createElement('div');
         var buttonWinter = document.createElement('button');
         buttonSummer.textContent = "Summer";
         buttonWinter.textContent = "Winter";
@@ -100,23 +101,42 @@
         buttonWinter.style.height = "5%";
 
         cellInner.style.width = "100%";//HERE@@@//@@@
+        // cellInner.style.marginTop = 5%;
+        // cellInner.style.marginBottom = 5%;
         // cellInner.style.width = DO RESET PARENT /SET CELL INNER
 
-        buttonSummer.style.width = "20%";
-        buttonSummer.style.right = "500vw";
-        buttonSummer.style.textAlign = "center";
-        buttonSummer.style.color = "purple";
-        buttonSummer.style.fontWeight = "bold"; 
+        
+        // buttonSummer.style.width = "20%";
+        // buttonSummer.style.textAlign = "center";
+        // buttonSummer.style.color = "purple";
+        // buttonSummer.style.fontWeight = "bold"; 
         cellInner.appendChild(document.createElement("br"));
-        cellInner.appendChild(document.createElement("br"));
-        cellInner.appendChild(document.createElement("br"));
-        cellInner.appendChild(document.createElement("br"));
-        cellInner.appendChild(buttonSummer);
-        cellBackground.appendChild(buttonWinter);
+        buttonHead.appendChild(buttonSummer);
+        buttonHead.appendChild(buttonWinter);
+        buttonHead.width = "100%";
+        // document.getElementById("movingImage").style.left = 100 + "px";
+        // buttonWinter.style.right = "0px";
+        buttonWinter.setAttribute("class", "right10p");
+        buttonSummer.setAttribute("class",  "left10p");
+        cellBackground.appendChild(buttonHead);
+        cellBackground.height = "100%";
         cellBackground.width = "100%";
         
         cellBackground.style.backgroundImage = 'url(../../../Images/GreenHouse/CollagePage/' + i + ".jpg" + ')';
         grid.appendChild(cellBackground);
     }
 </script>
+
+
+<style>
+    .left10p{
+        float: left;
+        margin-left: 10%;
+    }
+    .right10p{
+        float: right;
+        margin-right: 10%;
+    }
+</style>
+    
 </html>

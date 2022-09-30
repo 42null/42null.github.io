@@ -131,7 +131,9 @@
         
         // cellBackground.style.backgroundImage = 'url(../../../Images/GreenHouse/CollagePage/' + i + ".jpg" + '),'+'url(../../../Images/GreenHouse/CollagePage/' + i + ".jpg" + ')';
         cellBackground.style.backgroundRepeat="no-repeat, repeat-x, repeat-y";
-        cellBackground.style.backgroundImage = 'url(https://picsum.photos/200/300),'+'url(https://picsum.photos/200/301)';
+        cellBackground.style.backgroundSize="50% 100%";
+        cellBackground.style.backgroundImage = 'url(../../../Images/GreenHouse/CollagePage/' + i*2 + ".jpg" + '),'+'url(../../../Images/GreenHouse/CollagePage/' + (i*3) + ".jpg" + ')';
+        
         grid.appendChild(cellBackground);
     }
 </script>

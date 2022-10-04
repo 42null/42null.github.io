@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="/../../../style.css" rel="stylesheet" type="text/css" />
+
+
+    <title>Search</title>
+    <link rel="../../../Images/favicons/apple-touch-icon" sizes="180x180"
+        href="../../../Images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../Images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../Images/favicons/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/eaed8eb078.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="./inventory.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style src="/PageFragments/navStyle.css"></style>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>$(function () {$("#nav-placeholder").load("/PageFragments/nav.html");});</script>
+
+    <div class="image_banner">
+        <div class="image_banner_text" id="image_banner_text" style="background-color: #5959597a;">
+            <h1 style="font-size: 10vh">Search <span class="pageCategory"></span></h1>
+            <center>
+                <p style="font-size: 4vh">Find out which trees are best for you</p>
+                <button style="font-size: 3vh" title="Back to full catalog" <span><a href="../Catolog.html" target="_self">Back to Whole-Catalog Search</a></span>
+
+            </center>
+            </form>
+        </div>
+    </div>
+    <div id="selectProduct" style="backgorund-color:#fff;"></div>
+    
+</body>
+
+<script type="text/javascript" src="https://42null.memmojs.repl.co/NavPages/GreenHouse/Categories/inventory.js"></script>
+
+    
+<script>
+//Primary page info changes
+    document.title += " Gourds";
+    
+    // getStockFromCategoryTypeVarient("gourds","babyPumpkin","orange",2);
+
+    
+    var categories = [
+    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",1),
+    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",2),
+    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",3),
+    ];
+
+
+    var grid = document.createElement('div');
+    grid.style.display = 'grid';
+    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
+    // grid.style.gridGap = '10px';
+    var addToElement = document.getElementById('selectProduct');
+    // addToElement.style.backgroundColor = "var(--dark_lighter_background)";
+    grid.style.padding = "0% 0% 1%";
+    addToElement.appendChild(grid);
+    for (var i = 0; i < categories.length; i++) {
+        var cellBackground = document.createElement('a');
+        var cellInner = document.createElement('div');
+        var stockOptions = document.createElement('div');
+        
+        // cellBackground.style.padding = '20px';
+        // cellBackground.style.borderColor = 'var(--background-color)';
+        // cellBackground.style.backgroundColor = "black";
+        // cellBackground.style.border = "thin solid red";
+        cellBackground.style.textDecoration = "none"
+        cellBackground.style.height = "65vh"
+        if(i!=0){
+            cellBackground.style.marginLeft = "2%";
+        }else{
+            cellBackground.style.marginRight = "2%";
+        }
+        
+        cellBackground.style.textAlign = 'center';
+        // cellBackground.setAttribute('id', 'clippedCorners');
+        cellBackground.setAttribute('href', "./Categories/" + categories[i].replace(/­/g, "") + ".html");
+
+        cellInner.setAttribute("class", "breakAndHyphensAll");
+        cellInner.style.textAlign = 'inherit';
+        cellInner.style.fontSize = "2em";
+        cellInner.style.fontWeight = 'bold';
+        cellInner.style.background = 'white';
+        // cellInner.style.mixBlendMode = "difference";
+        for (var j = 0; j < categories[i].length; j++){
+            cellInner.innerHTML += categories[i].charAt(j);
+        }
+        cellInner.style.textDecoration = "none";
+        cellInner.style.backgroundSize = 'cover';
+        cellInner.style.backgroundPosition = 'center';
+        cellInner.style.color = 'black';
+        cellBackground.style.background = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('http://placehold.it/350x150')"
+        cellInner.style.opacity = 0.6;
+
+
+//Picture Buttons
+        cellBackground.appendChild(cellInner);
+        var buttonSummer = document.createElement('button');
+        var buttonHead = document.createElement('div');
+        var buttonWinter = document.createElement('button');
+
+        buttonHead.style.backgroundHead = "";
+        
+        buttonSummer.textContent = "Summer View";
+        buttonWinter.textContent = "Winter View";
+        buttonSummer.style.height = "100%";
+        buttonWinter.style.height = "100%";
+        buttonSummer.style.width = "10%";
+        buttonWinter.style.width = "10%";
+        
+        cellInner.style.width = "100%";//HERE@@@//@@@
+        cellInner.appendChild(document.createElement("br"));
+        buttonHead.appendChild(buttonSummer);
+        buttonHead.appendChild(buttonWinter);
+        
+        buttonWinter.setAttribute("class", "right5p");
+        buttonSummer.setAttribute("class",  "left5p");
+        buttonHead.setAttribute("class",  "buttonHead");
+        cellBackground.style.position = "relative";
+        cellBackground.appendChild(buttonHead);
+        cellBackground.height = "100%";
+        cellBackground.style.backgroundRepeat="no-repeat, repeat-x, repeat-y";
+        cellBackground.style.backgroundSize="50% 100%";
+        cellBackground.style.backgroundImage = 'url(../../../Images/GreenHouse/CollagePage/' + i*2 + ".jpg" + '),'+'url(../../../Images/GreenHouse/CollagePage/' + (i*3) + ".jpg" + ')';
+
+        var infoUnder = document.createElement("div");
+        var stockTxt = document.createElement("p");
+        stockTxt.setAttribute("class","numberInStock");
+        stockTxt.textContent = "Unable to get # of stock avaiable";
+        stockTxt.textContent = getStockFromCategoryTypeVarient("gourds","babyPumpkin","orange",i);
+        infoUnder.style.backgroundColor = "pink";
+
+        
+        infoUnder.appendChild(stockTxt);
+        cellBackground.appendChild(infoUnder);
+        grid.appendChild(cellBackground);
+    }
+</script>
+
+
+<style>
+
+    .buttonHead{
+        position: absolute;
+        color: orange;
+        height: 5vh;
+        width: 100%;
+        top: 10%;
+    }
+
+    .numberInStock{
+        background: seagreen;
+        position: absolute;
+        color: orange;
+        height: 5vh;
+        bottom: -5vh;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .left5p{
+        float: left;
+        bottom: 0px;
+        margin-left: 5%;
+    }
+    .right5p{
+        float: right;
+        margin-right: 5%;
+    }
+    .left10p{
+        float: left;
+        margin-left: 10%;
+    }
+    .right10p{
+        float: right;
+        margin-right: 10%;
+    }
+    .pageCategory{
+        content: "gourds";
+    }
+</style>
+    
+</html>

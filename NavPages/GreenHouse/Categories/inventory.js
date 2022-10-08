@@ -1,7 +1,7 @@
 const stock = [
     { category: "gourds", 
     type: "babyPumpkin", 
-    title: "Orange flat", 
+    title: "Orange Flat", 
     color: "orange", 
     varient: 1, 
     description: "Tiny decorative pumpkins with a long shelf-life, can be kept inside for months before going bad.", 
@@ -10,7 +10,7 @@ const stock = [
     
     { category: "gourds", 
     type: "babyPumpkin", 
-    title: "Tall orange", 
+    title: "Tall Orange", 
     color: "orange", 
     varient: 2,
     description: "Tiny decorative pumpkins with a long shelf-life, can be kept inside for months before going bad.", 
@@ -25,6 +25,7 @@ const stock = [
     description: "Tiny decorative pumpkins with a long shelf-life, can be kept inside for months before going bad.", 
     productID: "GBPO3",
     inStock: 5 },
+
 ];
 
 function getStockFromCategoryTypeVarient(category, type, color, varient) {
@@ -47,6 +48,17 @@ function getTitleFromCategoryTypeVarient(category, type, color, varient) {
         .filter((element) => element.varient === varient)
         .map((item) => {
             return `${item.title}`;
+    });
+    return stockReturned;
+}
+
+function getTitlesFromCategoryTypeColor(category, type, color) {
+    let stockReturned = stock
+        .filter((element) => element.category === category)
+        .filter((element) => element.type === type)
+        .filter((element) => element.color === color)
+        .map((item) => {
+            return item;
     });
     return stockReturned;
 }

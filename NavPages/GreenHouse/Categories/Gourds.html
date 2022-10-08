@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+<script> const PRODUCT_PAGE = "Gourds"; </script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -26,9 +26,9 @@
 
     <div class="image_banner">
         <div class="image_banner_text" id="image_banner_text" style="background-color: #5959597a;">
-            <h1 style="font-size: 10vh">Search <span class="pageCategory"></span></h1>
+<!-- <!--             <h1 style="font-size: 10vh">Search <span class="pageCategory"></span></h1> -->
             <center>
-                <p style="font-size: 4vh">Find out which trees are best for you</p>
+                <p style="font-size: 4vh">Find out which <span class="pageCategory"></span> are best for you</p>
                 <button style="font-size: 3vh" title="Back to full catalog" <span><a href="../Catolog.html" target="_self">Back to Whole-Catalog Search</a></span>
 
             </center>
@@ -44,16 +44,20 @@
     
 <script>
 //Primary page info changes
-    document.title += " Gourds";
+    document.title += " "+PRODUCT_PAGE;
     
     // getStockFromCategoryTypeVarient("gourds","babyPumpkin","orange",2);
 
+    var products = getTitlesFromCategoryTypeColor("gourds","babyPumpkin","orange");
     
-    var categories = [
-    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",1),
-    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",2),
-    ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",3),
-    ];
+    // var categories = [];
+    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",1),
+    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",2),
+    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",3),
+    // ];
+    // for (let product of products) {
+    //     categories.push(product.title);
+    // }
 
 
     var grid = document.createElement('div');
@@ -64,17 +68,14 @@
     // addToElement.style.backgroundColor = "var(--dark_lighter_background)";
     grid.style.padding = "0% 0% 1%";
     addToElement.appendChild(grid);
-    for (var i = 0; i < categories.length; i++) {
+    for (var i = 0; i < products.length; i++) {
         var cellBackground = document.createElement('a');
         var cellInner = document.createElement('div');
         var stockOptions = document.createElement('div');
-        
-        // cellBackground.style.padding = '20px';
-        // cellBackground.style.borderColor = 'var(--background-color)';
-        // cellBackground.style.backgroundColor = "black";
-        // cellBackground.style.border = "thin solid red";
+
         cellBackground.style.textDecoration = "none"
         cellBackground.style.height = "65vh"
+        // cellBackground.style.height = "auto"
         if(i!=0){
             cellBackground.style.marginLeft = "2%";
         }else{
@@ -83,7 +84,7 @@
         
         cellBackground.style.textAlign = 'center';
         // cellBackground.setAttribute('id', 'clippedCorners');
-        cellBackground.setAttribute('href', "./Categories/" + categories[i].replace(/­/g, "") + ".html");
+        // cellBackground.setAttribute('href', "./Categories/" + products[i].replace(/­/g, "") + ".html");
 
         cellInner.setAttribute("class", "breakAndHyphensAll");
         cellInner.style.textAlign = 'inherit';
@@ -91,8 +92,8 @@
         cellInner.style.fontWeight = 'bold';
         cellInner.style.background = 'white';
         // cellInner.style.mixBlendMode = "difference";
-        for (var j = 0; j < categories[i].length; j++){
-            cellInner.innerHTML += categories[i].charAt(j);
+        for (var j = 0; j < products[i].title.length; j++){
+            cellInner.innerHTML += products[i].title.charAt(j);
         }
         cellInner.style.textDecoration = "none";
         cellInner.style.backgroundSize = 'cover';
@@ -128,24 +129,36 @@
         cellBackground.style.position = "relative";
         cellBackground.appendChild(buttonHead);
         cellBackground.height = "100%";
+        cellBackground.style.background = "blue";
         cellBackground.style.backgroundRepeat="no-repeat, repeat-x, repeat-y";
-        cellBackground.style.backgroundSize="50% 100%";
+        // cellBackground.style.backgroundSize="50% 100%";
+        cellBackground.style.backgroundSize="50% auto";
+        
         cellBackground.style.backgroundImage = 'url(../../../Images/GreenHouse/CollagePage/' + i*2 + ".jpg" + '),'+'url(../../../Images/GreenHouse/CollagePage/' + (i*3) + ".jpg" + ')';
 
         var infoUnder = document.createElement("div");
+        infoUnder.style.background = "black";
+        
         var stockTxt = document.createElement("p");
         stockTxt.setAttribute("class","numberInStock");
-        stockTxt.textContent = "Unable to get # of stock avaiable";
-        stockTxt.textContent = getStockFromCategoryTypeVarient("gourds","babyPumpkin","orange",i);
-        infoUnder.style.backgroundColor = "pink";
+        // stockTxt.textContent = "Unable to get # of stock avaiable";
+        
+        stockTxt.textContent = ""+products[i].description;
+        // stockTxt.appendChild(document.createElement('br'));
+        stockTxt.textContent += "\n "+products[i].inStock+" "+products[i].category+" of type "+products[i].title+"'s remaining";
 
         
         infoUnder.appendChild(stockTxt);
         cellBackground.appendChild(infoUnder);
         grid.appendChild(cellBackground);
     }
-</script>
 
+    let tempElements = document.getElementsByClassName("pageCategory");
+    for (let i = 0; i < tempElements.length; i++) {
+        tempElements[i].textContent=PRODUCT_PAGE.toLowerCase();
+    } 
+    document.title += " "+PRODUCT_PAGE;
+</script>
 
 <style>
 
@@ -158,12 +171,15 @@
     }
 
     .numberInStock{
+        display: block;
+        overflow: auto;
+        padding: -5% 4% 4% 4%;
+/*         opacity: 0.8; */
         background: seagreen;
         position: absolute;
-        color: orange;
-        height: 5vh;
-        bottom: -5vh;
-        width: 100%;
+/*         color: orange; */
+/*         bottom: -5vh; */
+        bottom: 0px;
         text-align: left;
     }
     

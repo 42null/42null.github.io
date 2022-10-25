@@ -34,8 +34,15 @@ const cookieCartContentsDefault = "";
 
 function updateCartCookieContents(cookieStockID, numberOfStock){
 
-var json_str2 = getCookie(cookieCartName);
-var arr2 = JSON.parse(json_str2);
+    var json_str2 = getCookie(cookieCartName);
+    var arr2 = "";
+
+    try{       
+        arr2 = JSON.parse(json_str2);
+    }catch(err){
+        arr2 = JSON.parse("[]");
+        // console.log(err);
+    }
     console.log(">"+arr2);
 
     if(arr2.indexOf(cookieStockID) != -1){

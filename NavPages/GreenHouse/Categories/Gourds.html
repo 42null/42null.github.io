@@ -53,16 +53,6 @@
 
     var products = getTitlesFromCategoryTypeColor("gourds", "babyPumpkin", "orange");
 
-    // var categories = [];
-    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",1),
-    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",2),
-    // ""+getTitleFromCategoryTypeVarient("gourds","babyPumpkin","orange",3),
-    // ];
-    // for (let product of products) {
-    //     categories.push(product.title);
-    // }
-
-
     var grid = document.createElement('div');
     grid.style.display = 'grid';
     grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
@@ -78,13 +68,12 @@
 
         cellBackground.style.textDecoration = "none"
         cellBackground.style.height = "65vh"
-        // cellBackground.style.height = "auto"
-        if (i != 0) {
+        // cellBackground.backgroundSize = "cover";
+        if(i != 0){
             cellBackground.style.marginLeft = "2%";
-        } else {
+        }else{
             cellBackground.style.marginRight = "2%";
         }
-
         cellBackground.style.textAlign = 'center';
         // cellBackground.setAttribute('id', 'clippedCorners');
         // cellBackground.setAttribute('href', "./Categories/" + products[i].replace(/­/g, "") + ".html");
@@ -113,6 +102,10 @@
         var buttonHead = document.createElement('div');
         var buttonWinter = document.createElement('button');
 
+        var addToCart = document.createElement('div');
+        var addToCartButton = document.createElement('button');
+
+
         buttonHead.style.backgroundHead = "";
 
         buttonSummer.textContent = "Summer View";
@@ -138,8 +131,12 @@
         // cellBackground.style.backgroundSize="50% 100%";
         cellBackground.style.backgroundSize = "50% auto";
 
+
         cellBackground.style.backgroundImage = 'url(../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "a.jpg" + '),'+'url( ../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "b.jpg" + ')';
-        var infoUnder = document.createElement("div"); infoUnder.style.background = "black";        var stockTxt = document.createElement("p"); stockTxt.setAttribute("class", "numberInStock");
+        var infoUnder = document.createElement("div");
+        infoUnder.style.background = "black";
+        var stockTxt = document.createElement("p");
+        stockTxt.setAttribute("class", "numberInStock");
         // stockTxt.textContent = "Unable to get # of stock avaiable";
 
         stockTxt.textContent = "" + products[i].description;
@@ -148,7 +145,20 @@
 
 
         infoUnder.appendChild(stockTxt);
+        
+        addToCart.setAttribute("class", "addToCartButton");
+        // var addToCartButton = new             <label>How much do you want to charge? $<input type=number min=0 step=0.01 name=price></label>
+        addToCartButton.textContent = "Add To Cart";
+        addToCart.style.bottom = 0;
+        const cookieStockID = products[i].productID;
+        const numberOfStock = 5;
+        addToCart.addEventListener('click', () => {
+            updateCartCookieContents(cookieStockID, numberOfStock);
+        });
         cellBackground.appendChild(infoUnder);
+        addToCart.appendChild(addToCartButton);
+        infoUnder.appendChild(addToCart);
+
         grid.appendChild(cellBackground);
     }
 
@@ -156,7 +166,6 @@
     for (let i = 0; i < tempElements.length; i++) {
         tempElements[i].textContent = PRODUCT_PAGE.toLowerCase();
     }
-    document.title += " " + PRODUCT_PAGE;
 </script>
 
 <style>
@@ -166,6 +175,16 @@
         height: 5vh;
         width: 100%;
         top: 10%;
+    }
+
+    .addToCartButton {
+        display: block;
+        overflow: auto;
+/*         padding: -5% 4% 4% 4%;
+        /*         opacity: 0.8; */
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
     }
 
     .numberInStock {
@@ -180,7 +199,7 @@
         bottom: 0px;
         text-align: left;
     }
-
+    
     .left5p {
         float: left;
         bottom: 0px;

@@ -28,6 +28,27 @@ const stock = [
 
 ];
 
+// Cart Cookie Dissasembly
+const cookieCartName = "cart";
+const cookieCartContentsDefault = "";
+
+function updateCartCookieContents(cookieStockID, numberOfStock){
+
+var json_str2 = getCookie(cookieCartName);
+var arr2 = JSON.parse(json_str2);
+    console.log(">"+arr2);
+
+    if(arr2.indexOf(cookieStockID) != -1){
+        
+    }else{
+        arr2.push(cookieStockID);
+    }
+    document.cookie = cookieCartName+"="+JSON.stringify(arr2);;
+}
+
+
+
+
 function getStockFromCategoryTypeVarient(category, type, color, varient) {
     let stockReturned = stock
         .filter((element) => element.category === category)
@@ -63,10 +84,36 @@ function getTitlesFromCategoryTypeColor(category, type, color) {
     return stockReturned;
 }
 
-// let graduatingStudents = students
-//     .filter((element) => element.category === )
-//     .map((item) => {
-//       return `${item.title} ${item.inStock}`;
-// });
-  
-// console.log(graduatingStudents); // ["John Doe", "Abigail Susu"]
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+} 

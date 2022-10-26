@@ -32,6 +32,17 @@ const stock = [
 const cookieCartName = "cart";
 const cookieCartContentsDefault = "";
 
+// https://stackoverflow.com/a/12696051
+Array.prototype.findReg = function(match) {
+    var reg = new RegExp(match);
+
+    return this.filter(function(item){
+        return typeof item == 'string' && item.match(reg);
+    });
+}
+
+
+
 function updateCartCookieContents(cookieStockID, numberOfStock){
 
     var json_str2 = getCookie(cookieCartName);
@@ -45,13 +56,34 @@ function updateCartCookieContents(cookieStockID, numberOfStock){
     }
     console.log(">"+arr2);
 
-    if(arr2.indexOf(cookieStockID) != -1){
+    // let locationInArray = arr2.indexOf(cookieStockID);
+
+    let notFound = true;
+    for(let i = 0; i < arr2.length; i++){
+        console.log("+++"+arr2[i].substring(0, arr2[i].indexOf(":")));
+        if(arr2[i].substring(0, arr2[i].indexOf(":")) == cookieStockID){
+            notFound = false;
+            
+            if(numberOfStock == 0){
+                arr2.splice(i, 1);
+            }else{
+                // arr2.splice(locationInArray, 1);
+                // arr2.push(cookieStockID+":"+numberOfStock);
         
-    }else{
-        arr2.push(cookieStockID);
+            }
+        }
+        
+
     }
+    if(notFound){
+        console.log("ADDING TO CART");
+        arr2.push(cookieStockID+":"+numberOfStock);
+    }
+    // let locationInArray = arr2.findReg("//"+cookieStockID+":\w+");
+    
     document.cookie = cookieCartName+"="+JSON.stringify(arr2);;
 }
+
 
 
 

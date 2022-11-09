@@ -32,17 +32,6 @@ const stock = [
 const cookieCartName = "cart";
 const cookieCartContentsDefault = "";
 
-// https://stackoverflow.com/a/12696051
-Array.prototype.findReg = function(match) {
-    var reg = new RegExp(match);
-
-    return this.filter(function(item){
-        return typeof item == 'string' && item.match(reg);
-    });
-}
-
-
-
 function updateCartCookieContents(cookieStockID, numberOfStock){
 
     var json_str2 = getCookie(cookieCartName);
@@ -52,40 +41,27 @@ function updateCartCookieContents(cookieStockID, numberOfStock){
         arr2 = JSON.parse(json_str2);
     }catch(err){
         arr2 = JSON.parse("[]");
-        // console.log(err);
     }
-    console.log(">"+arr2);
-
-    // let locationInArray = arr2.indexOf(cookieStockID);
-
+    
     let notFound = true;
     for(let i = 0; i < arr2.length; i++){
-        console.log("+++"+arr2[i].substring(0, arr2[i].indexOf(":")));
         if(arr2[i].substring(0, arr2[i].indexOf(":")) == cookieStockID){
             notFound = false;
             
             if(numberOfStock == 0){
                 arr2.splice(i, 1);
             }else{
-                // arr2.splice(locationInArray, 1);
-                // arr2.push(cookieStockID+":"+numberOfStock);
-        
+                arr2[i] = cookieStockID+":"+numberOfStock;
             }
         }
-        
 
     }
-    if(notFound){
+    if(notFound && numberOfStock != 0){
         console.log("ADDING TO CART");
         arr2.push(cookieStockID+":"+numberOfStock);
     }
-    // let locationInArray = arr2.findReg("//"+cookieStockID+":\w+");
-    
     document.cookie = cookieCartName+"="+JSON.stringify(arr2);;
 }
-
-
-
 
 
 function getStockFromCategoryTypeVarient(category, type, color, varient) {

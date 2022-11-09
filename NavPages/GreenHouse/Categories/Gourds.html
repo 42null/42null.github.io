@@ -69,9 +69,9 @@
         cellBackground.style.textDecoration = "none"
         cellBackground.style.height = "65vh"
         // cellBackground.backgroundSize = "cover";
-        if(i != 0){
+        if (i != 0) {
             cellBackground.style.marginLeft = "2%";
-        }else{
+        } else {
             cellBackground.style.marginRight = "2%";
         }
         cellBackground.style.textAlign = 'center';
@@ -103,7 +103,9 @@
         var buttonWinter = document.createElement('button');
 
         var addToCart = document.createElement('div');
-        var addToCartButton = document.createElement('input');
+        var addToCartText = document.createElement('p');
+        var addToCartButton = document.createElement('button');
+        const addToCartInput = document.createElement('input');
 
 
         buttonHead.style.backgroundHead = "";
@@ -132,7 +134,7 @@
         cellBackground.style.backgroundSize = "50% auto";
 
 
-        cellBackground.style.backgroundImage = 'url(../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "a.jpg" + '),'+'url( ../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "b.jpg" + ')';
+        cellBackground.style.backgroundImage = 'url(../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "a.jpg" + '),' + 'url( ../../../../Images/GreenHouse/InventoryPhotos/' + products[i].productID + "b.jpg" + ')';
         var infoUnder = document.createElement("div");
         infoUnder.style.background = "black";
         var stockTxt = document.createElement("p");
@@ -140,24 +142,46 @@
         // stockTxt.textContent = "Unable to get # of stock avaiable";
 
         stockTxt.textContent = "" + products[i].description;
-        // stockTxt.appendChild(document.createElement('br'));
-        stockTxt.textContent += "\n " + products[i].inStock + " " + products[i].category + " of type " + products[i].title + "'s remaining";
+        // stockTxt.appendChild(document.createElement('br'));        stockTxt.textContent += "\n " + products[i].inStock + " " + products[i].category + " of type " + products[i].title + "'s remaining";
 
 
         infoUnder.appendChild(stockTxt);
-        
+
         addToCart.setAttribute("class", "addToCartButton");
-        // var addToCartButton = new             <label>How much do you want to order? $<input type=number min=0 step=0.01 name=price></label>
-        addToCartButton.textContent = "Add To Cart";
-        addToCartButton.setAttribute("type","button");
+        addToCartText.style.height = "100%";
+        addToCartText.style.witdh = "100%";
+        addToCartText.style.background = "yellow";
+        addToCartText.textContent = "Items in cart";
+        addToCartInput.textContent = "Add To Cart";
+        addToCartInput.style.width = "5ch";
+        addToCartInput.setAttribute("type", "number");
+        addToCartInput.setAttribute("min", 0);
+        addToCartInput.setAttribute("value", 1);
+        addToCartInput.setAttribute("step", 1);
+        const inventoryLeftInStock = products[i].inStock;
+        addToCartInput.setAttribute("max", inventoryLeftInStock);
+        addToCartInput.setAttribute("placeholder", "Ammount");
+        addToCartButton.textContent = "Set";
+        addToCartButton.style.height = "100%";
+        addToCartButton.style.width = "auto";
+        addToCartButton.style.background = "";//TODO: FIND A COLOR!        addToCartButton.textContent = "Set";
         addToCart.style.bottom = 0;
         const cookieStockID = products[i].productID;
-        const numberOfStock = 5;
-        addToCart.addEventListener('click', () => {
-            updateCartCookieContents(cookieStockID, numberOfStock);
+        addToCartButton.addEventListener('click', () => {            updateCartCookieContents(cookieStockID, addToCartInput.value);
         });
+
+        //Get all on one line
+        addToCartText.style.display = "inline-block";
+        addToCartInput.style.display = "inline-block";
+        addToCartButton.style.display = "inline-block";
+
         cellBackground.appendChild(infoUnder);
+        addToCart.appendChild(addToCartText);
+        addToCart.appendChild(addToCartInput);
         addToCart.appendChild(addToCartButton);
+
+        // addToCart.style.marginTop = "100%";
+        
         infoUnder.appendChild(addToCart);
 
         grid.appendChild(cellBackground);
@@ -181,7 +205,7 @@
     .addToCartButton {
         display: block;
         overflow: auto;
-/*         padding: -5% 4% 4% 4%;
+        /*         padding: -5% 4% 4% 4%;
         /*         opacity: 0.8; */
         position: absolute;
         bottom: 0px;
@@ -200,7 +224,7 @@
         bottom: 0px;
         text-align: left;
     }
-    
+
     .left5p {
         float: left;
         bottom: 0px;

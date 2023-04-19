@@ -44,7 +44,6 @@ body, html{
     --app_guessing_normal: #1da389;
     --app_guessing_light: #24ffd5;
     --app_guessing_dark: #094e40;
-
 }
 
 @media (prefers-color-scheme:light) {
@@ -100,7 +99,7 @@ body, html{
 
     }
 }
-/* Light mode */
+/* dark mode */
 @media (prefers-color-scheme:dark){
 
 /* [data-theme="dark"] {

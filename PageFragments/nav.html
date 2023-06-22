@@ -131,4 +131,25 @@
 </style>
 <footer style="z-index: 99999;">
     <p style="font-size: 1.2em;  "><b>This site I made in high-school and is being revitalized to use a Spring Boot Framework (instead of from raw HTML), expect content to be outdated. Update will go live on <a alt="Click to open in new tab" target="_blank" href="http://nullified.mooo.com" style="color:white;">nullified.mooo.com</a>, untill then, repository will be accessable on <a alt="Click to open in new tab" target="_blank" href="https://github.com/42null/SpringBootWithAPIPersonalWebsiteV2" style="color:white;">SpringBootWithAPIPersonalWebsiteV2</a>.</b></p>
+        <script>
+        // CODE MODIFIED FROM https://stackoverflow.com/a/9815854
+        function testImage(URL) {
+            var tester = new Image();
+            tester.onload = imageFound;
+            tester.onerror = imageNotFound;
+            tester.src = URL;
+        }
+
+        function imageFound() {
+            location.replace("http://nullified.mooo.com");
+            alert("You are being redirected to http://nullified.mooo.com");
+        }
+
+        function imageNotFound() {
+            alert('This is an old site I made. You should have been redrirected to http://nullified.mooo.com but it appears inaccessible at the moment. Please note, this site\'s information is likley out of date.');
+        }
+
+        testImage("http://nullified.mooo.com/img/pageImages/CoverImage.jpg");
+
+    </script>
 </footer>

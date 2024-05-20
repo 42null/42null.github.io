@@ -5,7 +5,7 @@
     <div class="talkative">
       <p></p>
   <!--    <p class="info">See <code>README.md</code> for more use.</p>-->
-      <p class="info">This is a rework of my Github Pages site and is currently still under development. This site will act as a portfolio link to other work that I have done (and an opportunity to try out typescript &#128522;).</p>
+      <p class="info">This is a rework of my Github Pages site and is currently still under development. This site will act as a portfolio link to other work that I have done (and is an opportunity for me to try out typescript &#128522;).</p>
     </div>
     <router-link :to="{ name: 'Showcase' }" title="Showcase" class="pill-button">Showcase</router-link>
   </section>

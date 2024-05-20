@@ -1,66 +1,32 @@
 <template>
   <section class="page">
-    <h1>Axios page.</h1>
-    <p>Example of API call. In this case we use Github Api for show list of repositories.</p>
-    <p class="info">See <code>README.md</code> for more information.</p>
+    <h1>Showcases</h1>
+    <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
+<!--    <p class="info">See <code>README.md</code> for more information.</p>-->
 
-    <h3>Current repository:</h3>
-    <div v-if="currentRepository" class="current-repo">
-      <div class="current-repo__img">
-        <img :src="getImageRepo(currentRepository.name)" :alt="currentRepository.name" />
-      </div>
-      <div class="current-repo__info">
-        <h4>
-          <a :href="currentRepository.html_url" target="_blank" :title="currentRepository.name">
-            {{ currentRepository.full_name }}
-          </a>
-        </h4>
-        <p>{{ currentRepository.description }}</p>
-        <p>{{ currentRepository.open_issues_count }} Issues, {{ currentRepository.forks_count }} Forks</p>
-      </div>
-    </div>
-    <p v-else>No info for this repository</p>
+    <h3>Showcase</h3>
+    <article v-for="showcase in allShowcases" class="list-repo__item"><!--TODO: Put back key-->
+      <showcase-item :title="showcase.title" :description="showcase.description" :url="showcase.url"></showcase-item>
+    </article>
 
-    <h3>My others repositories:</h3>
-    <section v-if="allRepositories" class="list-repo">
-      <article v-for="repo in allRepositories" :key="repo.id" class="list-repo__item">
-        <img :src="getImageRepo(repo.name)" :alt="repo.name" />
-        <p class="list-repo__content">
-          <a :href="repo.html_url" target="_blank" title="repo.name">{{ repo.name }}</a>
-        </p>
-      </article>
-    </section>
-    <p v-else>No repositories found.</p>
+<!--    <h3>My others repositories:</h3>-->
   </section>
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, reactive, ref } from "vue";
-  import { container } from "@/services/inversify/inversify.config";
-  import { TYPES } from "@/services/inversify/type";
-  import { ApiGithubService as GithubService } from "@/services/ApiGithubService";
+  import { ref } from 'vue';
+  import ShowcaseItem from "@/components/ShowcaseItem.vue";
 
-  const ApiGithubService = container.get<GithubService>(TYPES.ApiGitHubService);
-
-  const nameAuthor: any = ref("42null");
-  const currentRepository: any = ref({});
-  const allRepositories: any = ref({});
-
-  const initCallApiAndLoadData = async (): Promise<void> => {
-    currentRepository.value = await ApiGithubService.getOneRepository(
-      nameAuthor.value,
-      "42null.github.io",
-    );
-    allRepositories.value = await ApiGithubService.getAllRepositories(nameAuthor.value);
-  };
-
-  function getImageRepo(repo: string): string {
-    return "https://opengraph.githubassets.com/1/" + nameAuthor.value + "/" + repo;
+  interface Item {
+    title: string;
+    description: string;
+    url: string;
   }
 
-  onMounted(() => {
-    initCallApiAndLoadData();
-  });
+  const allShowcases = ref<Item[]>([
+    { title: 'Instant Inventory', description: 'Instant Inventory (JS2 Final). Feel free to message me for a login :). It uses a NoSQL firebase for interacting with data.', url: 'https://fir-demo-621bc.web.app/#/' },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
+    { title: '.NET Web Final', description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC', url: 'https://expandeddotnetwebfinal.azurewebsites.net/' },
+  ]);
 </script>
 
 <style lang="scss" scoped>

@@ -1,0 +1,1 @@
+import{_ as o,c as t,o as _,p as c,a as s,b as a}from"./index.309cb8d6.js";const p={},d=e=>(c("data-v-c0e37f40"),e=e(),s(),e),n={class:"page"},r=d(()=>a("h1",null,"About page.",-1)),u=[r];function i(e,l){return _(),t("section",n,u)}var h=o(p,[["render",i],["__scopeId","data-v-c0e37f40"]]);export{h as default};

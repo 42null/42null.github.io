@@ -1,8 +1,8 @@
 <template>
   <nav class="credits">
     <p>
-      &lt;&sol;💻&gt; with ❤ by
-      <a href="https://vinces.io" title="Vinces" target="_blank">@vinces</a>. Have Fun 🍻
+      Started from from "<a href="https://github.com/Sp0ne/vue3-vite-typescript-starter" title="Vue3 + Vite + Typescript Starter" target="_blank">vue3-vite-typescript-starter</a>" by
+      <a href="https://vinces.io" title="Vinces" target="_blank">@vinces</a>.
     </p>
   </nav>
 </template>

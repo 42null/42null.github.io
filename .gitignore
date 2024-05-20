@@ -3,6 +3,7 @@ node_modules
 /dist
 dist
 dist-ssr
+yarn.lock
 
 # local env files
 *.local

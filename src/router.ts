@@ -14,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Axios.vue"),
   },
   {
+    path: "/showcase",
+    name: "Showcase",
+    component: () => import("@/pages/Showcase.vue"),
+  },
+  {
     path: "/about",
     name: "About",
     component: () => import("@/pages/About.vue"),

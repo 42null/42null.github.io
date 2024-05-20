@@ -1,7 +1,8 @@
 <template>
   <nav class="navigation">
     <router-link :to="{ name: 'Home' }" title="Home">Home</router-link>
-    <router-link :to="{ name: 'Axios' }" title="Axios">Axios</router-link>
+<!--    <router-link :to="{ name: 'Axios' }" title="Axios">Axios</router-link>-->
+    <router-link :to="{ name: 'Showcase' }" title="Showcase">Showcase</router-link>
     <router-link :to="{ name: 'About' }" title="About">About</router-link>
     <a href="#" title="Switch Theme" class="toggleTheme" @click.stop="toggleTheme()">
       {{ userTheme === "light-theme" ? "☀️" : "🌙" }}

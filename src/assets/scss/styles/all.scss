@@ -76,7 +76,8 @@ li {
 
 a {
   text-decoration: underline;
-  color: inherit;
+  //color: inherit;
+  color: var(--color);
   transition: color .3s;
   &:hover {
     color: var(--contrast);

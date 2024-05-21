@@ -1,26 +1,65 @@
-<script setup lang="ts">
-  const props = defineProps({
-    title: String,
-    description: String,
-    url: String,
-    imgs: Array<String>,
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import { QCarousel, QCarouselSlide } from 'quasar';
+
+  export default defineComponent({
+    name: "ShowcaseItem",
+    components: {QCarousel, QCarouselSlide},
+    data() {
+      return {
+        slide: ref<number>(0),
+        autoplay: ref(true),
+      }
+    },
+    props: {
+      title: String,
+      description: String,
+      url: String,
+      imgs: Array<String>,
+    },
   });
+
 </script>
 
 <template>
   <div class="showcase-card">
-    <a :href="url" target="_blank" :title="title">
-
-      <div class="">
-        <h3>
-            {{ title }}
-        </h3>
-        <div class="showcase-card__img">
-          <img :src="imgs?.[0]" :alt="'Screenshot of '+title" />
-        </div>
-        <p>{{ description }}</p>
-      </div>
-    </a>
+    <div class="showcase-card__header">
+      <h3>
+        <a :href="url" target="_blank" :title="title">
+          {{ title }}
+        </a>
+      </h3>
+    </div>
+    <div class="showcase-card__carousel">
+      <q-responsive :ratio="16/9">
+      <QCarousel
+        swipeable
+        animated
+        v-model="slide"
+        thumbnails
+        infinite
+        :autoplay="autoplay"
+      >
+        <template v-slot:control>
+          <q-carousel-control
+            position="bottom-right"
+            :offset="[18, 18]"
+            class="text-white rounded-borders"
+            style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"
+          >
+            <q-toggle dense dark color="primary" v-model="autoplay" label="Auto Play" />
+          </q-carousel-control>
+        </template>
+<!--        <template v-slot:navigation-icon-->
+<!--        >-->
+<!--        </template>-->
+        <QCarouselSlide v-for="(img, i) in imgs" :name="i" :img-src="img.src" />
+      </QCarousel>
+      </q-responsive>
+    </div>
+    <div class="showcase-card__footer">
+      <p>{{ description }}</p>
+    </div>
   </div>
 </template>
 
@@ -40,5 +79,14 @@
         display: inline-flex;
       }
     }
+  }
+</style>
+
+<style>
+  .q-carousel__thumbnail{
+    border: 1px solid var(--q-primary) !important;
+  }
+  .q-carousel__thumbnail--active{
+    border-width: 2px !important;
   }
 </style>

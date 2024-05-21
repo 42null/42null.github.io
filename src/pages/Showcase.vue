@@ -1,17 +1,21 @@
 <template>
   <section class="page">
-    <h1>Showcases</h1>
-    <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
-<!--    <p class="info">See <code>README.md</code> for more information.</p>-->
+    <div class="top-info">
+      <h1>Showcases</h1>
+      <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
+  <!--    <p class="info">See <code>README.md</code> for more information.</p>-->
 
-    <h2>Currently Available</h2>
-    <article v-for="showcase in allShowcases" class="list-repo__item"><!--TODO: Put back key-->
-      <showcase-item :title="showcase.title"
-                     :description="showcase.description"
-                     :url="showcase.url"
-                     :imgs="showcase.imgs"
-      ></showcase-item>
-    </article>
+      <h2>Currently Available</h2>
+    </div>
+    <div class="showcases">
+      <article v-for="showcase in allShowcases" class="list-repo__item"><!--TODO: Put back key-->
+        <showcase-item :title="showcase.title"
+                       :description="showcase.description"
+                       :url="showcase.url"
+                       :imgs="showcase.imgs"
+        ></showcase-item>
+      </article>
+    </div>
 
 <!--    <h3>My others repositories:</h3>-->
   </section>
@@ -21,28 +25,58 @@
   import { ref } from 'vue';
   import ShowcaseItem from "@/components/ShowcaseItem.vue";
 
-  interface Item {
+  interface ImgDisplay {
+    title: string;
+    src: string;
+  }
+
+  interface Showcase {
     title: string;
     description: string;
     url: string;
-    imgs: string[];
+    imgs: ImgDisplay[];
   }
 
-  const allShowcases = ref<Item[]>([
+  const allShowcases = ref<Showcase[]>([
     { title: 'Instant Inventory',
-      description: 'Instant Inventory (JS2 Final). Feel free to message me for a login :). It uses a NoSQL firebase for interacting with data.',
+      description: 'Instant Inventory (JS2 Final). Deployed but requires a login for authentication. It uses a NoSQL firebase for interacting with data.',
       url: 'https://fir-demo-621bc.web.app/#/',
       imgs: [
-        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
-        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image'
+        {
+          title: 'Home',
+          src: 'public/images/showcases/JS2_final/home_admin.png',
+        },{
+          title: 'Inventory',
+          src: 'public/images/showcases/JS2_final/inventory_root_admin.png',
+        },{
+          title: 'Admin',
+          src: 'public/images/showcases/JS2_final/admin_admin.png',
+        },{
+          title: 'Notifications (Out of Stock)',
+          src: 'public/images/showcases/JS2_final/notifications_out_of_order.png',
+        },{
+          title: 'Notifications (Reorder Level Reached)',
+          src: 'public/images/showcases/JS2_final/notifications_reorder_level_reached.png',
+        },{
+          title: 'Records',
+          src: 'public/images/showcases/JS2_final/records_admin.png',
+        },{
+          title: 'Statistics',
+          src: 'public/images/showcases/JS2_final/statistics_records_admin.png',
+        },
       ],
     },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
     { title: '.NET Web Final',
       description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC',
       url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
       imgs: [
-        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
-        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image'
+        {
+          title: '',
+          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+        },{
+          title: '',
+          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+        },
       ],
     },
   ]);
@@ -50,10 +84,12 @@
 
 <style lang="scss" scoped>
   .page {
-    max-width: 650px;
     width: 100%;
     h3 {
       margin-top: calc(var(--gap) * 3);
+    }
+    .top-info {
+      max-width: 650px;
     }
   }
   .current-repo {
@@ -111,5 +147,7 @@
       height: 100%;
     }
   }
+  .showcases {
+    width: 80%;
+  }
 </style>
-/home/pi/SpringBootWithAPIPersonalWebsiteV2/server/src/main/resources/static/content/portfolioSites.json

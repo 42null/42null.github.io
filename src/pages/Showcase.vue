@@ -44,25 +44,25 @@
       imgs: [
         {
           title: 'Home',
-          src: 'public/images/showcases/JS2_final/home_admin.png',
+          src: 'images/showcases/JS2_final/home_admin.png',
         },{
           title: 'Inventory',
-          src: 'public/images/showcases/JS2_final/inventory_root_admin.png',
+          src: 'images/showcases/JS2_final/inventory_root_admin.png',
         },{
           title: 'Admin',
-          src: 'public/images/showcases/JS2_final/admin_admin.png',
+          src: 'images/showcases/JS2_final/admin_admin.png',
         },{
           title: 'Notifications (Out of Stock)',
-          src: 'public/images/showcases/JS2_final/notifications_out_of_order.png',
+          src: 'images/showcases/JS2_final/notifications_out_of_order.png',
         },{
           title: 'Notifications (Reorder Level Reached)',
-          src: 'public/images/showcases/JS2_final/notifications_reorder_level_reached.png',
+          src: 'images/showcases/JS2_final/notifications_reorder_level_reached.png',
         },{
           title: 'Records',
-          src: 'public/images/showcases/JS2_final/records_admin.png',
+          src: 'images/showcases/JS2_final/records_admin.png',
         },{
           title: 'Statistics',
-          src: 'public/images/showcases/JS2_final/statistics_records_admin.png',
+          src: 'images/showcases/JS2_final/statistics_records_admin.png',
         },
       ],
     },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git

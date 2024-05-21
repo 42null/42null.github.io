@@ -14,7 +14,9 @@
     "e2e:run-ct": "cypress run-ct --headless",
     "e2e:open": "cypress open",
     "e2e:open-ct": "cypress open-ct",
-    "e2e:test": "yarn e2e:run && yarn e2e:run-ct"
+    "e2e:test": "yarn e2e:run && yarn e2e:run-ct",
+
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.11",

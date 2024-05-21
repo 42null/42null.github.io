@@ -3,20 +3,21 @@
     title: String,
     description: String,
     url: String,
+    imgs: Array<String>,
   });
 </script>
 
 <template>
-  <div class="current-repo">
+  <div class="showcase-card">
     <a :href="url" target="_blank" :title="title">
 
-      <div class="current-repo__img">
-  <!--      <img :src="getImageRepo(currentRepository.name)" :alt="currentRepository.name" />-->
-      </div>
-      <div class="current-repo__info">
-        <h4>
+      <div class="">
+        <h3>
             {{ title }}
-        </h4>
+        </h3>
+        <div class="showcase-card__img">
+          <img :src="imgs?.[0]" :alt="'Screenshot of '+title" />
+        </div>
         <p>{{ description }}</p>
       </div>
     </a>
@@ -24,5 +25,20 @@
 </template>
 
 <style scoped lang="scss">
+  .showcase-card{
 
+    &__img {
+      display: flex;
+      width: 40%;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-height: 150px;
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+        display: inline-flex;
+      }
+    }
+  }
 </style>

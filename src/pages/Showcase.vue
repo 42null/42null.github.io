@@ -4,9 +4,13 @@
     <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
 <!--    <p class="info">See <code>README.md</code> for more information.</p>-->
 
-    <h3>Showcase</h3>
+    <h2>Currently Available</h2>
     <article v-for="showcase in allShowcases" class="list-repo__item"><!--TODO: Put back key-->
-      <showcase-item :title="showcase.title" :description="showcase.description" :url="showcase.url"></showcase-item>
+      <showcase-item :title="showcase.title"
+                     :description="showcase.description"
+                     :url="showcase.url"
+                     :imgs="showcase.imgs"
+      ></showcase-item>
     </article>
 
 <!--    <h3>My others repositories:</h3>-->
@@ -21,11 +25,26 @@
     title: string;
     description: string;
     url: string;
+    imgs: string[];
   }
 
   const allShowcases = ref<Item[]>([
-    { title: 'Instant Inventory', description: 'Instant Inventory (JS2 Final). Feel free to message me for a login :). It uses a NoSQL firebase for interacting with data.', url: 'https://fir-demo-621bc.web.app/#/' },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
-    { title: '.NET Web Final', description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC', url: 'https://expandeddotnetwebfinal.azurewebsites.net/' },
+    { title: 'Instant Inventory',
+      description: 'Instant Inventory (JS2 Final). Feel free to message me for a login :). It uses a NoSQL firebase for interacting with data.',
+      url: 'https://fir-demo-621bc.web.app/#/',
+      imgs: [
+        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image'
+      ],
+    },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
+    { title: '.NET Web Final',
+      description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC',
+      url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
+      imgs: [
+        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+        'https://via.placeholder.com/1200x500.png?text=Placeholder+Image'
+      ],
+    },
   ]);
 </script>
 
@@ -79,6 +98,7 @@
       overflow: hidden;
       background: var(--background-light);
       border: 1px solid var(--border);
+      margin-top: 0.8em;
     }
     &__content {
       display: flex;
@@ -92,3 +112,4 @@
     }
   }
 </style>
+/home/pi/SpringBootWithAPIPersonalWebsiteV2/server/src/main/resources/static/content/portfolioSites.json

@@ -72,10 +72,10 @@
       imgs: [
         {
           title: '',
-          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+          src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
         },{
           title: '',
-          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+          src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
         },
       ],
     },

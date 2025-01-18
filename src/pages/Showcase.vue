@@ -40,7 +40,7 @@
   const allShowcases = ref<Showcase[]>([
     { title: 'Instant Inventory',
       description: 'Instant Inventory (JS2 Final). Deployed but requires a login for authentication. It uses a NoSQL firebase for interacting with data.',
-      url: 'https://fir-demo-621bc.web.app/#/login',
+      url: 'https://fir-demo-621bc.web.app/#/',
       imgs: [
         {
           title: 'Home',
@@ -92,7 +92,10 @@
           title: 'Discounts',
           src: 'images/showcases/DotnetWebFinalExpanded/discounts_sign_in.png',
         },
-
+        // ,{
+        //   title: '',
+        //   src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
+        // },
       ],
     },
   ]);

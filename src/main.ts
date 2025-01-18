@@ -34,6 +34,7 @@ import { store } from "@/store";
 import App from "@/App.vue";
 import router from "@/router";
 import { Quasar } from "quasar";
+import "@quasar/extras/material-icons/material-icons.css";
 
 // Import Quasar CSS
 import "quasar/src/css/index.sass";
@@ -47,6 +48,9 @@ app.use(router);
 // @ts-ignore
 app.use(Quasar, {
   config: {
+    extras: [
+      'material-icons'
+    ]
   },
 });
 

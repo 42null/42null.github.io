@@ -26,7 +26,7 @@ import { QCarousel, QCarouselSlide } from 'quasar';
     <div class="showcase-card__header">
       <h3>
         <a :href="url" target="_blank" :title="title">
-          {{ title }}
+          {{ title }} <q-icon name="open_in_new" />
         </a>
       </h3>
     </div>

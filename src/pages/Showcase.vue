@@ -71,12 +71,21 @@
       url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
       imgs: [
         {
-          title: '',
-          src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
-        },{
-          title: '',
-          src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
+          title: 'OrderCart',
+          src: 'images/showcases/advanced_dotnet_web/NorthwindBuyChaiCart.png',
         },
+        {
+          title: 'Purchase History',
+          src: 'images/showcases/advanced_dotnet_web/NorthwindPurchaseHistory.png',
+        },
+        {
+          title: 'Discounts',
+          src: 'images/showcases/advanced_dotnet_web/NorthwindDiscounts.png',
+        },
+        // ,{
+        //   title: '',
+        //   src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
+        // },
       ],
     },
   ]);

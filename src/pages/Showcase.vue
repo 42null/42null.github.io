@@ -40,7 +40,7 @@
   const allShowcases = ref<Showcase[]>([
     { title: 'Instant Inventory',
       description: 'Instant Inventory (JS2 Final). Deployed but requires a login for authentication. It uses a NoSQL firebase for interacting with data.',
-      url: 'https://fir-demo-621bc.web.app/#/',
+      url: 'https://fir-demo-621bc.web.app/#/login',
       imgs: [
         {
           title: 'Home',
@@ -63,20 +63,36 @@
         },{
           title: 'Statistics',
           src: 'images/showcases/JS2_final/statistics_records_admin.png',
+        },{
+          title: 'Login',
+          src: 'images/showcases/JS2_final/login.png',
         },
       ],
     },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
     { title: '.NET Web Final',
-      description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC',
+      description: "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure and I plan to continue adding on to it.",
       url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
       imgs: [
         {
-          title: '',
-          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+          title: 'Home',
+          src: 'images/showcases/DotnetWebFinalExpanded/home_sign_in.png',
         },{
           title: '',
-          src: 'https://via.placeholder.com/1200x500.png?text=Placeholder+Image',
+          src: 'images/showcases/DotnetWebFinalExpanded/categories_sign_in.png',
+        },{
+          title: '',
+          src: 'images/showcases/DotnetWebFinalExpanded/products_reviews_sign_in.png',
+        },{
+          title: '',
+          src: 'images/showcases/DotnetWebFinalExpanded/purchases.png',
+        },{
+          title: 'Leaving a review',
+          src: 'images/showcases/DotnetWebFinalExpanded/leave_review.png',
+        },{
+          title: 'Discounts',
+          src: 'images/showcases/DotnetWebFinalExpanded/discounts_sign_in.png',
         },
+
       ],
     },
   ]);

@@ -2,7 +2,7 @@
 
 vite build
 
-vite preview
+#vite preview
 
 echo "Please preview what would be pushed, a non-dev preview of 'dist' is available as a quick check."
 
@@ -13,10 +13,10 @@ echo    # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # Deploy to GitHub Pages
-    gh-pages -d dist
+#    gh-pages -d dist
+  vite build
+# && vite preview &&
+  gh-pages -d dist
 else
     echo "Deployment aborted."
 fi
-
-
-vite build && vite preview && gh-pages -d dist

@@ -63,24 +63,34 @@
         },{
           title: 'Statistics',
           src: 'images/showcases/JS2_final/statistics_records_admin.png',
+        },{
+          title: 'Login',
+          src: 'images/showcases/JS2_final/login.png',
         },
       ],
     },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
     { title: '.NET Web Final',
-      description: 'I was in charge of the ratings (creating, displaying, API, and showing previous orders). The project is using the identity framework ans a SQL database with .NET MVC',
+      description: "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure and I plan to continue adding on to it.",
       url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
       imgs: [
         {
-          title: 'OrderCart',
-          src: 'images/showcases/advanced_dotnet_web/NorthwindBuyChaiCart.png',
-        },
-        {
-          title: 'Purchase History',
-          src: 'images/showcases/advanced_dotnet_web/NorthwindPurchaseHistory.png',
-        },
-        {
+          title: 'Home',
+          src: 'images/showcases/DotnetWebFinalExpanded/home_sign_in.png',
+        },{
+          title: '',
+          src: 'images/showcases/DotnetWebFinalExpanded/categories_sign_in.png',
+        },{
+          title: '',
+          src: 'images/showcases/DotnetWebFinalExpanded/products_reviews_sign_in.png',
+        },{
+          title: '',
+          src: 'images/showcases/DotnetWebFinalExpanded/purchases.png',
+        },{
+          title: 'Leaving a review',
+          src: 'images/showcases/DotnetWebFinalExpanded/leave_review.png',
+        },{
           title: 'Discounts',
-          src: 'images/showcases/advanced_dotnet_web/NorthwindDiscounts.png',
+          src: 'images/showcases/DotnetWebFinalExpanded/discounts_sign_in.png',
         },
         // ,{
         //   title: '',

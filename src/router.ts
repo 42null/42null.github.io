@@ -1,5 +1,10 @@
-import { createWebHistory, createRouter } from "vue-router";
-import { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import webShowcaseJSON from "@/assets/showcaseDetails/WebShowcase.json";
+
+const loadShowcases = async (path: string) => {
+  const response = await fetch(path);
+  return await response.json();
+};
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,8 +19,19 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/Axios.vue"),
   },
   {
-    path: "/showcase",
-    name: "Showcase",
+    path: "/web-showcase",
+    name: "Web Showcase",
+    component: () => import("@/pages/Showcase.vue"),
+    props: { showcases: webShowcaseJSON },
+    // props: async () => {
+    //   const showcases = webShowcaseJSON;
+    //   // const showcases = await loadShowcases("@/assets/showcaseDetails/WebShowcase.json");
+    //   return { showcases };
+    // },
+  },
+  {
+    path: "/app-showcase",
+    name: "App Showcase",
     component: () => import("@/pages/Showcase.vue"),
   },
   {

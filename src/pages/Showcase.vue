@@ -1,14 +1,14 @@
 <template>
   <section class="page">
     <div class="top-info">
-      <h1>Showcases</h1>
+      <h1>Web Showcases</h1>
       <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
   <!--    <p class="info">See <code>README.md</code> for more information.</p>-->
 
       <h2>Currently Available</h2>
     </div>
-    <div class="showcases">
-      <article v-for="showcase in allShowcases" class="list-repo__item"><!--TODO: Put back key-->
+    <div class="showcases row justify-between q-col-gutter-sm q-row-gutter-sm">
+      <article v-for="showcase in props.showcases" class="list-repo__item col-12 col-md-4"><!--TODO: Put back key-->
         <showcase-item :title="showcase.title"
                        :description="showcase.description"
                        :url="showcase.url"
@@ -24,6 +24,11 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import ShowcaseItem from "@/components/ShowcaseItem.vue";
+  import Showcase from "@/pages/Showcase.vue";
+
+  const props = defineProps<{
+    showcases: Showcase[];
+  }>();
 
   interface ImgDisplay {
     title: string;
@@ -36,69 +41,6 @@
     url: string;
     imgs: ImgDisplay[];
   }
-
-  const allShowcases = ref<Showcase[]>([
-    { title: 'Instant Inventory',
-      description: 'Instant Inventory (JS2 Final). Deployed but requires a login for authentication. It uses a NoSQL firebase for interacting with data.',
-      url: 'https://fir-demo-621bc.web.app/#/',
-      imgs: [
-        {
-          title: 'Home',
-          src: 'images/showcases/JS2_final/home_admin.png',
-        },{
-          title: 'Inventory',
-          src: 'images/showcases/JS2_final/inventory_root_admin.png',
-        },{
-          title: 'Admin',
-          src: 'images/showcases/JS2_final/admin_admin.png',
-        },{
-          title: 'Notifications (Out of Stock)',
-          src: 'images/showcases/JS2_final/notifications_out_of_order.png',
-        },{
-          title: 'Notifications (Reorder Level Reached)',
-          src: 'images/showcases/JS2_final/notifications_reorder_level_reached.png',
-        },{
-          title: 'Records',
-          src: 'images/showcases/JS2_final/records_admin.png',
-        },{
-          title: 'Statistics',
-          src: 'images/showcases/JS2_final/statistics_records_admin.png',
-        },{
-          title: 'Login',
-          src: 'images/showcases/JS2_final/login.png',
-        },
-      ],
-    },//https://github.com/JosephMemmelAtWCTC/vue-app-instant-inventory-vite-quasar.git
-    { title: '.NET Web Final',
-      description: "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure and I plan to continue adding on to it.",
-      url: 'https://expandeddotnetwebfinal.azurewebsites.net/',
-      imgs: [
-        {
-          title: 'Home',
-          src: 'images/showcases/DotnetWebFinalExpanded/home_sign_in.png',
-        },{
-          title: '',
-          src: 'images/showcases/DotnetWebFinalExpanded/categories_sign_in.png',
-        },{
-          title: '',
-          src: 'images/showcases/DotnetWebFinalExpanded/products_reviews_sign_in.png',
-        },{
-          title: '',
-          src: 'images/showcases/DotnetWebFinalExpanded/purchases.png',
-        },{
-          title: 'Leaving a review',
-          src: 'images/showcases/DotnetWebFinalExpanded/leave_review.png',
-        },{
-          title: 'Discounts',
-          src: 'images/showcases/DotnetWebFinalExpanded/discounts_sign_in.png',
-        },
-        // ,{
-        //   title: '',
-        //   src: 'https://placehold.co/1200x500.png?text=Placeholder+Image',
-        // },
-      ],
-    },
-  ]);
 </script>
 
 <style lang="scss" scoped>
@@ -167,6 +109,11 @@
     }
   }
   .showcases {
-    width: 80%;
+    width: 96%;
+    margin-left: 0.1%;
+  }
+  .showcases > article{
+    margin-left: -0.5%;
+    margin-right: -0.5%;
   }
 </style>

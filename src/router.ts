@@ -22,17 +22,21 @@ const routes: Array<RouteRecordRaw> = [
     path: "/web-showcase",
     name: "Web Showcase",
     component: () => import("@/pages/Showcase.vue"),
-    props: { showcases: webShowcaseJSON },
-    // props: async () => {
-    //   const showcases = webShowcaseJSON;
-    //   // const showcases = await loadShowcases("@/assets/showcaseDetails/WebShowcase.json");
-    //   return { showcases };
-    // },
+    props: {
+      title: "Web Showcase",
+      description: "",
+      showcases: webShowcaseJSON
+    },
   },
   {
     path: "/app-showcase",
     name: "App Showcase",
     component: () => import("@/pages/Showcase.vue"),
+    props: {
+      title: "App Showcase",
+      description: "",
+      showcases: webShowcaseJSON
+    },
   },
   {
     path: "/about",

@@ -1,7 +1,7 @@
 <template>
   <section class="page">
     <div class="top-info">
-      <h1>Web Showcases</h1>
+      <h1>{{props.title}}</h1>
       <p>This is under construction, many projects will be missing. Feel free to check my Github (<a href="https://github.com/42null" target="_blank">@42null</a>) to see what I have been working on (school projects use the handle <a href="https://github.com/josephmemmelatwctc" target="_blank">@josephmemmelatwctc</a> but are committed to by <a href="https://github.com/42null" target="_blank">@42null</a>.) </p>
   <!--    <p class="info">See <code>README.md</code> for more information.</p>-->
 
@@ -27,6 +27,8 @@
   import Showcase from "@/pages/Showcase.vue";
 
   const props = defineProps<{
+    title: string;
+    description: string;
     showcases: Showcase[];
   }>();
 

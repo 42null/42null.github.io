@@ -31,20 +31,20 @@
     ]
   },
   { "title": ".NET Web Final",
-    "description": "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure and I plan to continue adding on to it.",
+    "description": "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure.",
     "url": "https://expandeddotnetwebfinal.azurewebsites.net/",
     "imgs": [
       {
         "title": "Home",
         "src": "images/showcases/web/DotnetWebFinalExpanded/home_sign_in.png"
       },{
-        "title": "",
+        "title": "Sign In",
         "src": "images/showcases/web/DotnetWebFinalExpanded/categories_sign_in.png"
       },{
-        "title": "",
+        "title": "Product Reviews",
         "src": "images/showcases/web/DotnetWebFinalExpanded/products_reviews_sign_in.png"
       },{
-        "title": "",
+        "title": "Purchases",
         "src": "images/showcases/web/DotnetWebFinalExpanded/purchases.png"
       },{
         "title": "Leaving a review",
@@ -55,28 +55,22 @@
       }
     ]
   },
-  { "title": ".NET Web Final",
-    "description": "The project is using the identity framework for Authentication and a SQL database with .NET MVC. It is deployed to Microsoft Azure and I plan to continue adding on to it.",
-    "url": "https://expandeddotnetwebfinal.azurewebsites.net/",
+  { "title": "Spring Boot Personal Portfolio",
+    "description": "Running on a raspberry pi at home, this is my previous portfolio site",
+    "url": "http://nullified.mooo.com:80",
     "imgs": [
       {
-        "title": "Home",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/home_sign_in.png"
+        "title": "About",
+        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_about.png"
       },{
-        "title": "",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/categories_sign_in.png"
+        "title": "Contact",
+         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_contact.png"
       },{
-        "title": "",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/products_reviews_sign_in.png"
+        "title": "Github",
+         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_github.png"
       },{
-        "title": "",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/purchases.png"
-      },{
-        "title": "Leaving a review",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/leave_review.png"
-      },{
-        "title": "Discounts",
-         "src": "https://placehold.co/1200x500.png?text=Placeholder+Image"
+        "title": "Apps",
+        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_appsChalkboard.png"
       }
     ]
   }

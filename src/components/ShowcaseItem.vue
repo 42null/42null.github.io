@@ -53,7 +53,7 @@ import { QCarousel, QCarouselSlide } from 'quasar';
 <!--        <template v-slot:navigation-icon-->
 <!--        >-->
 <!--        </template>-->
-        <QCarouselSlide v-for="(img, i) in imgs" :name="i" :img-src="img.src" />
+        <QCarouselSlide v-for="(img, i) in imgs" :name="img.title" :img-src="img.src" :title="img.title"/>
       </QCarousel>
       </q-responsive>
     </div>

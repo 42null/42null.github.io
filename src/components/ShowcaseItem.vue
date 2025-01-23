@@ -9,6 +9,7 @@ import { QCarousel, QCarouselSlide } from 'quasar';
       return {
         slide: ref<number>(0),
         autoplay: ref(true),
+        fullscreen: ref(false)
       }
     },
     props: {
@@ -39,21 +40,33 @@ import { QCarousel, QCarouselSlide } from 'quasar';
         thumbnails
         infinite
         :autoplay="autoplay"
+        v-model:fullscreen="fullscreen"
       >
         <template v-slot:control>
           <q-carousel-control
-            position="bottom-right"
-            :offset="[18, 18]"
+            position="right"
+            :offset="[-4,100]"
             class="text-white rounded-borders"
             style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"
           >
-            <q-toggle dense dark color="primary" v-model="autoplay" label="Auto Play" />
+            <q-toggle dense dark color="primary" v-model="autoplay" />
+          </q-carousel-control>
+          <q-carousel-control
+            position="right"
+            :offset="[4,135]"
+          >
+            <q-btn
+              push round dense color="white" text-color="primary"
+              :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+              @click="fullscreen = !fullscreen"
+            />
           </q-carousel-control>
         </template>
 <!--        <template v-slot:navigation-icon-->
 <!--        >-->
 <!--        </template>-->
         <QCarouselSlide v-for="(img, i) in imgs" :name="img.title" :img-src="img.src" :title="img.title"/>
+
       </QCarousel>
       </q-responsive>
     </div>

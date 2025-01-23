@@ -2,8 +2,9 @@
   <nav class="navigation">
     <router-link :to="{ name: 'Home' }" title="Home">Home</router-link>
 <!--    <router-link :to="{ name: 'Axios' }" title="Axios">Axios</router-link>-->
-    <router-link :to="{ name: 'Web Showcase' }" title="Web Showcase">Web Showcase</router-link>
-    <router-link :to="{ name: 'App Showcase' }" title="App Showcase">App Showcase</router-link>
+    <router-link :to="{ name: 'Web Showcase' }" title="Web">Web</router-link>
+    <router-link :to="{ name: 'App Showcase' }" title="Apps">Apps</router-link>
+    <router-link :to="{ name: 'Games Showcase' }" title="Games">Games</router-link>
     <router-link :to="{ name: 'About' }" title="About">About</router-link>
     <a href="#" title="Switch Theme" class="toggleTheme" @click.stop="toggleTheme()">
       {{ userTheme === "light-theme" ? "☀️" : "🌙" }}

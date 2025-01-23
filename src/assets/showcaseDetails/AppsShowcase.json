@@ -1,0 +1,16 @@
+[
+  { "title": "Chalkboard",
+    "description": "A note taking app created as a high school app final of mine, built for Android.",
+    "url": "downloads/ChalkBoard.apk",
+    "imgs": [
+      {
+        "title": "Chalkboard (dark mode)",
+        "src": "images/showcases/apps/apps_chalkboard/AppsChalkboard_boardDark.png"
+      },
+      {
+        "title": "Stack (light mode)",
+        "src": "images/showcases/apps/apps_chalkboard/AppsChalkboard_stackLight.png"
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  { "title": "Console Monopoly",
+    "description": "High school java monopoly console-based game",
+    "url": "downloads/Monopoly_06-08-2021_09^06_UncompiledSourceCode.zip",
+    "imgs": [
+      {
+        "title": "Monopoly Loose",
+        "src": "images/showcases/games/console_monopoly/MonopolyLoose.png"
+      },
+      {
+        "title": "Monopoly In Play",
+        "src": "images/showcases/games/console_monopoly/MonopolyInPlay.png"
+      }
+    ]
+  }
+]

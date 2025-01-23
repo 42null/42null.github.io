@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import webShowcaseJSON from "@/assets/showcaseDetails/WebShowcase.json";
+import showcaseJsonWeb from "@/assets/showcaseDetails/WebShowcase.json";
+import showcaseJsonApps from "@/assets/showcaseDetails/AppsShowcase.json";
+import showcaseJsonGames from "@/assets/showcaseDetails/GamesShowcase.json";
 
 const loadShowcases = async (path: string) => {
   const response = await fetch(path);
@@ -23,9 +25,9 @@ const routes: Array<RouteRecordRaw> = [
     name: "Web Showcase",
     component: () => import("@/pages/Showcase.vue"),
     props: {
-      title: "Web Showcase",
+      title: "Web",
       description: "",
-      showcases: webShowcaseJSON
+      showcases: showcaseJsonWeb
     },
   },
   {
@@ -33,9 +35,19 @@ const routes: Array<RouteRecordRaw> = [
     name: "App Showcase",
     component: () => import("@/pages/Showcase.vue"),
     props: {
-      title: "App Showcase",
+      title: "Apps Showcase",
       description: "",
-      showcases: webShowcaseJSON
+      showcases: showcaseJsonApps
+    },
+  },
+  {
+    path: "/game-showcase",
+    name: "Games Showcase",
+    component: () => import("@/pages/Showcase.vue"),
+    props: {
+      title: "Games Showcase",
+      description: "",
+      showcases: showcaseJsonGames
     },
   },
   {

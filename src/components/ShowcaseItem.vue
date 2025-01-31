@@ -23,7 +23,7 @@ import { QCarousel, QCarouselSlide } from 'quasar';
 </script>
 
 <template>
-  <div class="showcase-card">
+  <div class="showcase-card q-mr-sm">
     <div class="showcase-card__header">
       <h3>
         <a :href="url" target="_blank" :title="title">
@@ -33,41 +33,42 @@ import { QCarousel, QCarouselSlide } from 'quasar';
     </div>
     <div class="showcase-card__carousel">
       <q-responsive :ratio="16/9">
-      <QCarousel
-        swipeable
-        animated
-        v-model="slide"
-        thumbnails
-        infinite
-        :autoplay="autoplay"
-        v-model:fullscreen="fullscreen"
-      >
-        <template v-slot:control>
-          <q-carousel-control
-            position="right"
-            :offset="[-4,100]"
-            class="text-white rounded-borders"
-            style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"
-          >
-            <q-toggle dense dark color="primary" v-model="autoplay" />
-          </q-carousel-control>
-          <q-carousel-control
-            position="right"
-            :offset="[4,135]"
-          >
-            <q-btn
-              push round dense color="white" text-color="primary"
-              :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-              @click="fullscreen = !fullscreen"
-            />
-          </q-carousel-control>
-        </template>
-<!--        <template v-slot:navigation-icon-->
-<!--        >-->
-<!--        </template>-->
-        <QCarouselSlide v-for="(img, i) in imgs" :name="img.title" :img-src="img.src" :title="img.title"/>
+        <QCarousel
+          swipeable
+          animated
+          v-model="slide"
+          thumbnails
+          infinite
+          :autoplay="autoplay"
+          v-model:fullscreen="fullscreen"
+        >
+          <template v-slot:control>
+            <q-carousel-control
+              position="right"
+              :offset="[-4,100]"
+              class="text-white rounded-borders"
+              style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"
+            >
+              <q-toggle dense dark color="primary" v-model="autoplay" />
+            </q-carousel-control>
+            <q-carousel-control
+              position="right"
+              :offset="[4,135]"
+            >
+              <q-btn
+                push round dense color="white" text-color="primary"
+                :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                @click="fullscreen = !fullscreen"
+              />
+            </q-carousel-control>
+          </template>
+  <!--        <template v-slot:navigation-icon-->
+  <!--        >-->
+  <!--        </template>-->
+          <QCarouselSlide v-for="(img, i) in imgs" :key="i" :name="img.title" :img-src="img.src" :title="img.title" class="carousel-slide"/>
 
-      </QCarousel>
+
+        </QCarousel>
       </q-responsive>
     </div>
     <div class="showcase-card__footer">
@@ -77,13 +78,13 @@ import { QCarousel, QCarouselSlide } from 'quasar';
 </template>
 
 <style scoped lang="scss">
-  .showcase-card{
-
+  .showcase-card {
     &__img {
       display: flex;
       width: 40%;
       justify-content: center;
       align-items: center;
+
       img {
         max-height: 150px;
         width: 100%;
@@ -92,6 +93,15 @@ import { QCarousel, QCarouselSlide } from 'quasar';
         display: inline-flex;
       }
     }
+  }
+
+
+  .carousel-slide img {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    display: block;
   }
 </style>
 

@@ -5,28 +5,28 @@
     "imgs": [
       {
         "title": "Home",
-        "src": "images/showcases/web/JS2_final/home_admin.png"
+        "src": "images/showcases/web/JS2_final/home_admin.jpg"
       },{
         "title": "Inventory",
-        "src": "images/showcases/web/JS2_final/inventory_root_admin.png"
+        "src": "images/showcases/web/JS2_final/inventory_root_admin.jpg"
       },{
         "title": "Admin",
-        "src": "images/showcases/web/JS2_final/admin_admin.png"
+        "src": "images/showcases/web/JS2_final/admin_admin.jpg"
       },{
         "title": "Notifications (Out of Stock)",
-        "src": "images/showcases/web/JS2_final/notifications_out_of_order.png"
+        "src": "images/showcases/web/JS2_final/notifications_out_of_order.jpg"
       },{
         "title": "Notifications (Reorder Level Reached)",
-        "src": "images/showcases/web/JS2_final/notifications_reorder_level_reached.png"
+        "src": "images/showcases/web/JS2_final/notifications_reorder_level_reached.jpg"
       },{
         "title": "Records",
-        "src": "images/showcases/web/JS2_final/records_admin.png"
+        "src": "images/showcases/web/JS2_final/records_admin.jpg"
       },{
         "title": "Statistics",
-        "src": "images/showcases/web/JS2_final/statistics_records_admin.png"
+        "src": "images/showcases/web/JS2_final/statistics_records_admin.jpg"
       },{
         "title": "Login",
-        "src": "images/showcases/web/JS2_final/login.png"
+        "src": "images/showcases/web/JS2_final/login.jpg"
       }
     ]
   },
@@ -36,22 +36,22 @@
     "imgs": [
       {
         "title": "Home",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/home_sign_in.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/home_sign_in.jpg"
       },{
         "title": "Sign In",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/categories_sign_in.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/categories_sign_in.jpg"
       },{
         "title": "Product Reviews",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/products_reviews_sign_in.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/products_reviews_sign_in.jpg"
       },{
         "title": "Purchases",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/purchases.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/purchases.jpg"
       },{
         "title": "Leaving a review",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/leave_review.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/leave_review.jpg"
       },{
         "title": "Discounts",
-        "src": "images/showcases/web/DotnetWebFinalExpanded/discounts_sign_in.png"
+        "src": "images/showcases/web/DotnetWebFinalExpanded/discounts_sign_in.jpg"
       }
     ]
   },
@@ -61,16 +61,16 @@
     "imgs": [
       {
         "title": "About",
-        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_about.png"
+        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_about.jpg"
       },{
         "title": "Contact",
-         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_contact.png"
+         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_contact.jpg"
       },{
         "title": "Github",
-         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_github.png"
+         "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_github.jpg"
       },{
         "title": "Apps",
-        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_appsChalkboard.png"
+        "src": "images/showcases/web/springBootPersonalPortfolio/springBootPortfolio_appsChalkboard.jpg"
       }
     ]
   }
